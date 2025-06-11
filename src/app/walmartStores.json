@@ -1,0 +1,322 @@
+[
+  {
+    "id": "store_delhi_1",
+    "name": "Walmart Delhi - Lajpat Nagar",
+    "location": { "lat": 28.5714, "lng": 77.2435 },
+    "address": "A-23, Lajpat Nagar II, New Delhi, Delhi 110024",
+    "performance": {
+      "carbonFootprint": {
+        "current": 105,
+        "target": 100,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 110
+      },
+      "energyConsumption": {
+        "current": 4800,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.78,
+        "unit": "percentage",
+        "target": 0.85
+      }
+    },
+    "issues": [
+      "Aging HVAC system leading to higher energy use in summer.",
+      "Occasional improper waste segregation by new staff.",
+      "Logistics vehicles not optimized for shortest routes."
+    ],
+    "suggestions": [
+      "Schedule professional energy audit for HVAC system upgrade recommendations.",
+      "Conduct refresher training on waste management protocols for all staff.",
+      "Implement route optimization software for delivery fleet.",
+      "Explore switching to LED lighting in sales floor areas."
+    ]
+  },
+  {
+    "id": "store_mumbai_1",
+    "name": "Walmart Mumbai - Andheri",
+    "location": { "lat": 19.1136, "lng": 72.8696 },
+    "address": "Near Citi Mall, Andheri West, Mumbai, Maharashtra 400053",
+    "performance": {
+      "carbonFootprint": {
+        "current": 85,
+        "target": 80,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 90
+      },
+      "energyConsumption": {
+        "current": 3500,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.92,
+        "unit": "percentage",
+        "target": 0.90
+      }
+    },
+    "issues": [
+      "Water leakage detected in staff restrooms.",
+      "Occasional use of single-use plastics by food vendors within premises."
+    ],
+    "suggestions": [
+      "Prioritize repair of water leaks and implement regular plumbing checks.",
+      "Engage with food vendors to promote use of compostable or reusable packaging.",
+      "Consider rainwater harvesting system for non-potable uses."
+    ]
+  },
+  {
+    "id": "store_bangalore_1",
+    "name": "Walmart Bangalore - Koramangala",
+    "location": { "lat": 12.9352, "lng": 77.6245 },
+    "address": "Outer Ring Rd, Koramangala, Bengaluru, Karnataka 560034",
+    "performance": {
+      "carbonFootprint": {
+        "current": 130,
+        "target": 110,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 125
+      },
+      "energyConsumption": {
+        "current": 6000,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.70,
+        "unit": "percentage",
+        "target": 0.80
+      }
+    },
+    "issues": [
+      "Older refrigeration units consuming excess electricity.",
+      "High reliance on grid electricity without renewable energy sources.",
+      "Limited space for composting organic waste."
+    ],
+    "suggestions": [
+      "Plan for phased upgrade of refrigeration equipment to newer, energy-efficient models.",
+      "Investigate rooftop solar panel installation feasibility.",
+      "Partner with local organic waste collection services for composting.",
+      "Conduct regular energy consumption audits."
+    ]
+  },
+  {
+    "id": "store_kolkata_1",
+    "name": "Walmart Kolkata - Salt Lake",
+    "location": { "lat": 22.5807, "lng": 88.4326 },
+    "address": "City Centre 1, Sector 1, Salt Lake City, Kolkata, West Bengal 700064",
+    "performance": {
+      "carbonFootprint": {
+        "current": 75,
+        "target": 70,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 78
+      },
+      "energyConsumption": {
+        "current": 3000,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.95,
+        "unit": "percentage",
+        "target": 0.92
+      }
+    },
+    "issues": [
+      "Minor challenges with plastic film recycling due to contamination."
+    ],
+    "suggestions": [
+      "Enhance signage and staff training for plastic film waste segregation.",
+      "Explore partnerships with advanced plastic recycling facilities."
+    ]
+  },
+  {
+    "id": "store_chennai_1",
+    "name": "Walmart Chennai - Velachery",
+    "location": { "lat": 12.9818, "lng": 80.2173 },
+    "address": "Grand Southern Trunk Rd, Velachery, Chennai, Tamil Nadu 600042",
+    "performance": {
+      "carbonFootprint": {
+        "current": 95,
+        "target": 90,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 98
+      },
+      "energyConsumption": {
+        "current": 4200,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.85,
+        "unit": "percentage",
+        "target": 0.88
+      }
+    },
+    "issues": [
+      "Slightly higher emissions from backup generator usage during power cuts."
+    ],
+    "suggestions": [
+      "Optimize generator run-times during power cuts.",
+      "Investigate battery storage solutions to reduce generator reliance.",
+      "Improve insulation for better temperature regulation."
+    ]
+  },
+  {
+    "id": "store_hyderabad_1",
+    "name": "Walmart Hyderabad - Gachibowli",
+    "location": { "lat": 17.4473, "lng": 78.3752 },
+    "address": "Near Deloitte, Gachibowli, Hyderabad, Telangana 500032",
+    "performance": {
+      "carbonFootprint": {
+        "current": 115,
+        "target": 100,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 120
+      },
+      "energyConsumption": {
+        "current": 5200,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.72,
+        "unit": "percentage",
+        "target": 0.80
+      }
+    },
+    "issues": [
+      "Older lighting fixtures in storage areas.",
+      "Limited engagement from staff on sustainability initiatives."
+    ],
+    "suggestions": [
+      "Replace old lighting with energy-efficient LED fixtures.",
+      "Introduce internal workshops and incentives for staff participation in sustainability.",
+      "Explore partnerships for electronic waste recycling."
+    ]
+  },
+  {
+    "id": "store_ahmedabad_1",
+    "name": "Walmart Ahmedabad - Satellite",
+    "location": { "lat": 23.0101, "lng": 72.5085 },
+    "address": "Near Shivranjani Cross Road, Satellite, Ahmedabad, Gujarat 380015",
+    "performance": {
+      "carbonFootprint": {
+        "current": 90,
+        "target": 90,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 92
+      },
+      "energyConsumption": {
+        "current": 3900,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.89,
+        "unit": "percentage",
+        "target": 0.88
+      }
+    },
+    "issues": [
+      "Some inefficiencies in cold storage insulation."
+    ],
+    "suggestions": [
+      "Conduct insulation audit for cold storage units.",
+      "Install door sensors on cold storage to prevent energy loss.",
+      "Encourage use of public transport for employee commute."
+    ]
+  },
+  {
+    "id": "store_pune_1",
+    "name": "Walmart Pune - Phoenix Market City",
+    "location": { "lat": 18.5672, "lng": 73.9168 },
+    "address": "Viman Nagar, Pune, Maharashtra 411014",
+    "performance": {
+      "carbonFootprint": {
+        "current": 100,
+        "target": 95,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 102
+      },
+      "energyConsumption": {
+        "current": 4500,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.82,
+        "unit": "percentage",
+        "target": 0.87
+      }
+    },
+    "issues": [
+      "Waste disposal contracts not fully optimized for recycling."
+    ],
+    "suggestions": [
+      "Review and renegotiate waste disposal contracts for higher recycling rates.",
+      "Implement a zero-waste policy for back-of-house operations.",
+      "Install smart meters for real-time energy monitoring."
+    ]
+  },
+  {
+    "id": "store_jaipur_1",
+    "name": "Walmart Jaipur - Malviya Nagar",
+    "location": { "lat": 26.8524, "lng": 75.8115 },
+    "address": "JLN Marg, Malviya Nagar, Jaipur, Rajasthan 302017",
+    "performance": {
+      "carbonFootprint": {
+        "current": 140,
+        "target": 120,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 135
+      },
+      "energyConsumption": {
+        "current": 6800,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.65,
+        "unit": "percentage",
+        "target": 0.75
+      }
+    },
+    "issues": [
+      "Inefficient water usage in cleaning operations.",
+      "High amount of food waste due to inventory management.",
+      "Lack of green space around the facility."
+    ],
+    "suggestions": [
+      "Implement water-saving cleaning techniques and equipment.",
+      "Improve inventory management to reduce food waste; explore food donation programs.",
+      "Develop a greening project for the store premises."
+    ]
+  },
+  {
+    "id": "store_lucknow_1",
+    "name": "Walmart Lucknow - Gomti Nagar",
+    "location": { "lat": 26.8584, "lng": 81.0028 },
+    "address": "Vibhuti Khand, Gomti Nagar, Lucknow, Uttar Pradesh 226010",
+    "performance": {
+      "carbonFootprint": {
+        "current": 110,
+        "target": 100,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 112
+      },
+      "energyConsumption": {
+        "current": 4900,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.79,
+        "unit": "percentage",
+        "target": 0.85
+      }
+    },
+    "issues": [
+      "Reliance on conventional lighting during peak hours.",
+      "Noise pollution concerns from delivery trucks at night."
+    ],
+    "suggestions": [
+      "Introduce natural light harvesting systems where possible.",
+      "Implement noise reduction measures for delivery operations.",
+      "Promote carpooling among employees."
+    ]
+  }
+]
