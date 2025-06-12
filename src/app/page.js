@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen min-w-screen p-4 bg-white" style={{ backgroundImage: "url('/abstract.png')" }}>
@@ -15,7 +16,7 @@ export default function Home() {
       <div className="flex gap-5">
         <Link
           href="/supplier"
-          className="bg-green-200 text-green-900 px-6 py-3 my-10 rounded-lg hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white shadow-md hover:shadow-lg transform hover:scale-105 transition-all ease-in-out flex items-center justify-center gap-2 duration-300"
+          className="bg-green-200 text-green-900 px-6 py-3 my-10 rounded-full hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white shadow-md hover:shadow-lg transform hover:scale-105 transition-all ease-in-out flex items-center justify-center gap-2 duration-300"
         >
           <Image
             src="/supplier.jpg"
@@ -29,7 +30,7 @@ export default function Home() {
 
         <Link
           href="/manager"
-          className="bg-green-200 text-green-900 px-6 py-3 my-10 rounded-lg hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white shadow-md hover:shadow-lg transform hover:scale-105 transition-all ease-in-out flex items-center justify-center gap-2 duration-300"
+          className="bg-green-200 text-green-900 px-6 py-3 my-10 rounded-full hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 hover:text-white shadow-md hover:shadow-lg transform hover:scale-105 transition-all ease-in-out flex items-center justify-center gap-2 duration-300"
         >
           <Image
             src="/manager.jpg"
