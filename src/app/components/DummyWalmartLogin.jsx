@@ -93,7 +93,7 @@ const DummyWalmartLogin = () => {
           className="text-center text-3xl font-bold mb-6"
           style={{ color: colors.textPrimary }}
         >
-          Flipkart Wholesale Store Access
+          Walmart Wholesale Store Access
         </h1>
         <p
           className="text-center text-sm mb-8"
