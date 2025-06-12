@@ -36,7 +36,7 @@ const StoreDrawer = ({ isOpen, onClose, store }) => {
       style={{ backgroundColor: '#f8fbfa', fontFamily: 'var(--font-manrope), var(--font-noto-sans), sans-serif' }}
     >
       <button onClick={onClose} className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-3xl font-bold p-1 rounded-full hover:bg-gray-100 transition-colors">
-        &times;
+        ×
       </button>
 
       <h2 className="text-3xl font-bold mb-4 text-[#0e1a13]">{store.name}</h2>
@@ -72,6 +72,21 @@ const StoreDrawer = ({ isOpen, onClose, store }) => {
           <p className="text-sm text-gray-600">Target: {(store.performance.wasteDiversion.target * 100).toFixed(1)}%</p>
         </div>
       </div>
+
+      {/* Major Factors Section */}
+      {store.majorFactors && store.majorFactors.length > 0 && (
+        <div className="bg-[#e8f2ec] rounded-lg p-4 mb-6 shadow-sm">
+          <h3 className="text-xl font-semibold mb-2 text-[#0e1a13]">Key Areas of Impact:</h3>
+          <ul className="list-disc list-inside text-gray-700 space-y-1">
+            {store.majorFactors.map((factor, index) => (
+              <li key={index} className="capitalize">
+                {/* Improve readability of factor names */}
+                {factor.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
 
       {/* Problems Faced Section */}

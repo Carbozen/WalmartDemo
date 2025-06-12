@@ -31,6 +31,7 @@ const ManagerLoginPage = () => {
   const [password, setPassword] = useState('');
   const [role, setRole] = useState(''); // Stores selected role from dropdown
   const [employeeId, setEmployeeId] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // New state for loading indicator
 
   // Define color palette, consistent with your other components
   const colors = {
@@ -55,6 +56,7 @@ const ManagerLoginPage = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission behavior (page reload)
+    setIsLoading(true); // Set loading to true when form is submitted
 
     // Log the dummy login data to the console for demonstration
     console.log("Simulating Login Attempt:", {
@@ -64,8 +66,10 @@ const ManagerLoginPage = () => {
       employeeId,
     });
 
-    // Simulate successful login by redirecting to the dashboard
-    router.push('/manager/dashboard');
+    // Simulate successful login by redirecting to the dashboard after a delay
+    setTimeout(() => {
+      router.push('/manager/dashboard');
+    }, 2000); // Simulate a 2-second delay for redirection
   };
 
   return (
@@ -108,6 +112,7 @@ const ManagerLoginPage = () => {
               className="form-input w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#51946b] transition duration-150"
               placeholder="e.g., john.doe@walmart.com"
               required
+              disabled={isLoading} // Disable input when loading
               style={{
                 borderColor: colors.borderColor,
                 backgroundColor: colors.backgroundPrimary,
@@ -130,6 +135,7 @@ const ManagerLoginPage = () => {
               className="form-input w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#51946b] transition duration-150"
               placeholder="Enter your password"
               required
+              disabled={isLoading} // Disable input when loading
               style={{
                 borderColor: colors.borderColor,
                 backgroundColor: colors.backgroundPrimary,
@@ -150,6 +156,7 @@ const ManagerLoginPage = () => {
               onChange={(e) => setRole(e.target.value)}
               className="form-select w-full p-3 border rounded-lg appearance-none bg-[image:var(--select-button-svg)] bg-no-repeat bg-right-center focus:outline-none focus:ring-2 focus:ring-[#51946b] transition duration-150"
               required
+              disabled={isLoading} // Disable input when loading
               style={{
                 borderColor: colors.borderColor,
                 backgroundColor: colors.backgroundPrimary,
@@ -180,6 +187,7 @@ const ManagerLoginPage = () => {
               className="form-input w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#51946b] transition duration-150"
               placeholder="e.g., WLM12345"
               required
+              disabled={isLoading} // Disable input when loading
               style={{
                 borderColor: colors.borderColor,
                 backgroundColor: colors.backgroundPrimary,
@@ -191,7 +199,7 @@ const ManagerLoginPage = () => {
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full py-3 px-4 rounded-lg font-bold text-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+            className="w-full py-3 px-4 rounded-lg font-bold text-lg transition-colors duration-200 shadow-md hover:shadow-lg flex items-center justify-center"
             style={{
               backgroundColor: colors.buttonBackground,
               color: colors.buttonText,
@@ -199,13 +207,28 @@ const ManagerLoginPage = () => {
               '--hover-text': colors.buttonText,
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--hover-bg)';
+              if (!isLoading) {
+                e.currentTarget.style.backgroundColor = 'var(--hover-bg)';
+              }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = colors.buttonBackground;
+              if (!isLoading) {
+                e.currentTarget.style.backgroundColor = colors.buttonBackground;
+              }
             }}
+            disabled={isLoading} // Disable button when loading
           >
-            Login
+            {isLoading ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Redirecting...
+              </>
+            ) : (
+              'Login'
+            )}
           </button>
         </form>
       </div>

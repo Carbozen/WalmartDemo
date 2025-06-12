@@ -21,16 +21,16 @@
         "target": 0.85
       }
     },
+    "majorFactors": ["HVAC", "waste-handling", "logistics"],
     "issues": [
       "Aging HVAC system leading to higher energy use in summer.",
       "Occasional improper waste segregation by new staff.",
       "Logistics vehicles not optimized for shortest routes."
     ],
     "suggestions": [
-      "Schedule professional energy audit for HVAC system upgrade recommendations.",
-      "Conduct refresher training on waste management protocols for all staff.",
-      "Implement route optimization software for delivery fleet.",
-      "Explore switching to LED lighting in sales floor areas."
+      "Schedule professional energy audit for HVAC system upgrade recommendations, focusing on a 15% reduction in cooling load by installing smart dampers in high-traffic zones, estimated 8% energy saving.",
+      "Conduct quarterly refresher training on waste management protocols for all staff, emphasizing clear bin labeling and visual aids, targeting a 5% improvement in plastic/cardboard segregation accuracy.",
+      "Implement advanced route optimization software for local delivery fleet, specifically for the congested Chandni Chowk route, aiming for a 7% reduction in fuel consumption and 10% less idle time. This may initially raise software costs by 3% but reduce CO2 by 8% for the affected routes."
     ]
   },
   {
@@ -55,14 +55,15 @@
         "target": 0.90
       }
     },
+    "majorFactors": ["water-usage", "packaging", "energy-efficiency"],
     "issues": [
       "Water leakage detected in staff restrooms.",
       "Occasional use of single-use plastics by food vendors within premises."
     ],
     "suggestions": [
-      "Prioritize repair of water leaks and implement regular plumbing checks.",
-      "Engage with food vendors to promote use of compostable or reusable packaging.",
-      "Consider rainwater harvesting system for non-potable uses."
+      "Prioritize repair of water leaks in staff restrooms and implement regular plumbing checks for all water points, aiming for a 10% reduction in water consumption.",
+      "Engage with food vendors to promote mandatory use of compostable or reusable packaging; provide incentives for compliance and education on alternatives. This might increase packaging costs by 10% for vendors, but eliminate 80% of single-use plastic waste from food court.",
+      "Consider installing low-flow aerators on all taps and urinals, estimated 15% water saving without significant cost increase."
     ]
   },
   {
@@ -87,16 +88,16 @@
         "target": 0.80
       }
     },
+    "majorFactors": ["refrigeration", "renewable-energy", "waste-composting"],
     "issues": [
       "Older refrigeration units consuming excess electricity.",
       "High reliance on grid electricity without renewable energy sources.",
       "Limited space for composting organic waste."
     ],
     "suggestions": [
-      "Plan for phased upgrade of refrigeration equipment to newer, energy-efficient models.",
-      "Investigate rooftop solar panel installation feasibility.",
-      "Partner with local organic waste collection services for composting.",
-      "Conduct regular energy consumption audits."
+      "Plan for phased upgrade of refrigeration equipment to newer, HFC-free, energy-efficient models. Initial investment is high (+30% CAPEX), but projected energy savings of 25% (450 kWh/month) and refrigerant leak reduction of 90% (equivalent to 10 tonnes CO2e/month).",
+      "Investigate rooftop solar panel installation feasibility, specifically for meeting 30% of daytime energy demand. This could reduce grid reliance significantly over 5 years. Initial cost 25% higher than traditional energy, but 18% CO2 emission reduction.",
+      "Partner with local organic waste collection services for centralized composting due to space constraints; explore a pilot program for community engagement in waste separation."
     ]
   },
   {
@@ -121,12 +122,15 @@
         "target": 0.92
       }
     },
+    "majorFactors": ["packaging", "logistics", "waste-handling"],
     "issues": [
-      "Minor challenges with plastic film recycling due to contamination."
+      "Minor challenges with plastic film recycling due to contamination.",
+      "Transportation route from Kolkata to Darjeeling is most carbon-intensive."
     ],
     "suggestions": [
-      "Enhance signage and staff training for plastic film waste segregation.",
-      "Explore partnerships with advanced plastic recycling facilities."
+      "Enhance signage and staff training for plastic film waste segregation at collection points, improving recycling yield by 10%.",
+      "For the Kolkata-Darjeeling route, investigate shifting 20% of high-value, low-volume goods to drone delivery. This raises cost by 27% (due to infrastructure and regulatory compliance) but brings CO2 emissions down by 33% on that specific route for the designated cargo.",
+      "Collaborate with local waste management NGOs for educational campaigns on responsible plastic disposal for customers."
     ]
   },
   {
@@ -151,13 +155,15 @@
         "target": 0.88
       }
     },
+    "majorFactors": ["energy-efficiency", "water-usage", "lighting"],
     "issues": [
-      "Slightly higher emissions from backup generator usage during power cuts."
+      "Slightly higher emissions from backup generator usage during power cuts.",
+      "Water leakage issues."
     ],
     "suggestions": [
-      "Optimize generator run-times during power cuts.",
-      "Investigate battery storage solutions to reduce generator reliance.",
-      "Improve insulation for better temperature regulation."
+      "Optimize generator run-times during power cuts by installing smart load balancing systems, aiming for 10% less fuel consumption during outages.",
+      "Investigate battery storage solutions to reduce generator reliance for short power fluctuations, potentially reducing CO2e by 5 tonnes/month at a 15% higher initial cost.",
+      "Improve insulation for better temperature regulation within the store, especially in high-humidity areas, leading to a 5% reduction in AC load. Prioritize repair of water leaks promptly and install water-saving fixtures in public restrooms."
     ]
   },
   {
@@ -182,14 +188,15 @@
         "target": 0.80
       }
     },
+    "majorFactors": ["lighting", "employee-engagement", "e-waste"],
     "issues": [
       "Older lighting fixtures in storage areas.",
       "Limited engagement from staff on sustainability initiatives."
     ],
     "suggestions": [
-      "Replace old lighting with energy-efficient LED fixtures.",
-      "Introduce internal workshops and incentives for staff participation in sustainability.",
-      "Explore partnerships for electronic waste recycling."
+      "Replace old lighting with energy-efficient LED fixtures in storage and back-office areas, yielding an immediate 8% energy saving for those sections. Payback period estimated at 18 months.",
+      "Introduce internal workshops and incentives for staff participation in sustainability programs (e.g., 'Green Champion' awards, waste sorting competitions), boosting engagement by 20% within 6 months.",
+      "Explore partnerships with certified electronic waste recycling facilities in Hyderabad for responsible disposal of obsolete electronics, reducing hazardous waste by 100% for handled items."
     ]
   },
   {
@@ -214,13 +221,15 @@
         "target": 0.88
       }
     },
+    "majorFactors": ["refrigeration", "transportation", "employee-commute"],
     "issues": [
-      "Some inefficiencies in cold storage insulation."
+      "Some inefficiencies in cold storage insulation.",
+      "High reliance on personal vehicles for employee commute."
     ],
     "suggestions": [
-      "Conduct insulation audit for cold storage units.",
-      "Install door sensors on cold storage to prevent energy loss.",
-      "Encourage use of public transport for employee commute."
+      "Conduct comprehensive insulation audit for cold storage units and seal any identified breaches, aiming for a 7% reduction in refrigeration energy consumption.",
+      "Install automatic door sensors on all walk-in cold storage units to minimize cold air loss, estimated 5% energy saving per unit.",
+      "Launch an employee carpooling incentive program and explore subsidized public transport passes to reduce employee commute emissions by 10-15%."
     ]
   },
   {
@@ -245,13 +254,14 @@
         "target": 0.87
       }
     },
+    "majorFactors": ["waste-management", "energy-monitoring"],
     "issues": [
       "Waste disposal contracts not fully optimized for recycling."
     ],
     "suggestions": [
-      "Review and renegotiate waste disposal contracts for higher recycling rates.",
-      "Implement a zero-waste policy for back-of-house operations.",
-      "Install smart meters for real-time energy monitoring."
+      "Review and renegotiate waste disposal contracts with local Pune agencies for higher recycling rates, specifically for mixed recyclables and food waste, aiming for a 10% increase in overall diversion.",
+      "Implement a zero-waste policy for back-of-house operations, focusing on packaging reduction from suppliers and reusable container programs for internal transfers.",
+      "Install smart meters for real-time energy monitoring across different departments to identify energy wastage hotspots and enable granular optimization."
     ]
   },
   {
@@ -276,15 +286,16 @@
         "target": 0.75
       }
     },
+    "majorFactors": ["water-usage", "food-waste", "urban-greening"],
     "issues": [
       "Inefficient water usage in cleaning operations.",
       "High amount of food waste due to inventory management.",
       "Lack of green space around the facility."
     ],
     "suggestions": [
-      "Implement water-saving cleaning techniques and equipment.",
-      "Improve inventory management to reduce food waste; explore food donation programs.",
-      "Develop a greening project for the store premises."
+      "Implement water-saving cleaning techniques and equipment, such as high-pressure low-volume washers, projected to save 20% water in daily operations.",
+      "Improve inventory management through AI-driven demand forecasting to reduce food waste by 15%; explore food donation programs with local charities for unavoidable surplus.",
+      "Develop a greening project for the store premises, planting native drought-resistant trees and shrubs to improve air quality and provide natural cooling, reducing heat island effect by 2-3°C."
     ]
   },
   {
@@ -309,14 +320,619 @@
         "target": 0.85
       }
     },
+    "majorFactors": ["lighting", "noise-pollution", "employee-commute"],
     "issues": [
       "Reliance on conventional lighting during peak hours.",
       "Noise pollution concerns from delivery trucks at night."
     ],
     "suggestions": [
-      "Introduce natural light harvesting systems where possible.",
-      "Implement noise reduction measures for delivery operations.",
-      "Promote carpooling among employees."
+      "Introduce natural light harvesting systems (e.g., skylights, light tubes) where possible, reducing reliance on artificial lighting during peak daytime hours, estimated 10% energy savings during daylight.",
+      "Implement noise reduction measures for delivery operations, such as scheduled quieter vehicle types or off-peak delivery windows for night deliveries, reducing local noise complaints by 30%.",
+      "Promote carpooling and cycling among employees by providing secure bike racks and shower facilities, aiming to reduce employee commute emissions by 8%."
+    ]
+  },
+  {
+    "id": "store_chandigarh_1",
+    "name": "Walmart Chandigarh - Zirakpur",
+    "location": { "lat": 30.6698, "lng": 76.8407 },
+    "address": "Ambala Chandigarh Expy, Zirakpur, Punjab 140603",
+    "performance": {
+      "carbonFootprint": {
+        "current": 98,
+        "target": 95,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 100
+      },
+      "energyConsumption": {
+        "current": 4100,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.87,
+        "unit": "percentage",
+        "target": 0.90
+      }
+    },
+    "majorFactors": ["heating", "water-usage", "landscaping"],
+    "issues": [
+      "Inefficient heating system usage during winter months.",
+      "High water consumption for outdoor landscaping."
+    ],
+    "suggestions": [
+      "Upgrade to smart thermostats and optimize heating schedules for the Punjab winter, reducing heating energy consumption by 12%.",
+      "Implement drip irrigation for landscaping to reduce water usage by 40% compared to traditional sprinklers, utilizing local expertise in xeriscaping.",
+      "Explore ground-source heat pump technology for combined heating and cooling, offering long-term energy efficiency despite higher initial investment."
+    ]
+  },
+  {
+    "id": "store_bhopal_1",
+    "name": "Walmart Bhopal - Hoshangabad Road",
+    "location": { "lat": 23.2372, "lng": 77.4526 },
+    "address": "Hoshangabad Rd, Misrod, Bhopal, Madhya Pradesh 462026",
+    "performance": {
+      "carbonFootprint": {
+        "current": 118,
+        "target": 105,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 125
+      },
+      "energyConsumption": {
+        "current": 5500,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.70,
+        "unit": "percentage",
+        "target": 0.80
+      }
+    },
+    "majorFactors": ["HVAC", "transportation", "food-waste"],
+    "issues": [
+      "Outdated air conditioning units in common areas.",
+      "Long-haul truck emissions from inter-state supply.",
+      "High food waste from deli section."
+    ],
+    "suggestions": [
+      "Replace R22 refrigerant-based AC units with R410A or CO2 systems in common areas, projected 20% energy savings on cooling. This also eliminates a high GWP refrigerant.",
+      "Optimize long-haul logistics routes for incoming goods from Maharashtra and Uttar Pradesh, focusing on consolidating shipments and backhauling opportunities, reducing fuel consumption by 5-7%.",
+      "Implement a real-time inventory tracking system for the deli section to minimize food waste by 10%; establish partnerships with local animal feed operations for unavoidable food scraps."
+    ]
+  },
+  {
+    "id": "store_kochi_1",
+    "name": "Walmart Kochi - LuLu Mall",
+    "location": { "lat": 10.0270, "lng": 76.3315 },
+    "address": "34/1000, N. H 47, Edappally, Kochi, Kerala 682024",
+    "performance": {
+      "carbonFootprint": {
+        "current": 80,
+        "target": 85,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 82
+      },
+      "energyConsumption": {
+        "current": 3300,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.93,
+        "unit": "percentage",
+        "target": 0.90
+      }
+    },
+    "majorFactors": ["water-usage", "employee-engagement", "packaging"],
+    "issues": [
+      "High water usage due to older sanitation fixtures.",
+      "Limited staff participation in existing recycling initiatives."
+    ],
+    "suggestions": [
+      "Install low-flow and sensor-based sanitation fixtures in all restrooms, projected 15% water saving.",
+      "Launch a 'Green Hands' employee recognition program for proactive waste management and energy saving, aiming for 25% increase in participation.",
+      "Evaluate opportunities for returnable/reusable transit packaging for local supplier deliveries, reducing cardboard waste by 20%."
+    ]
+  },
+  {
+    "id": "store_indore_1",
+    "name": "Walmart Indore - AB Road",
+    "location": { "lat": 22.7483, "lng": 75.8906 },
+    "address": "AB Rd, Scheme No 54, Indore, Madhya Pradesh 452010",
+    "performance": {
+      "carbonFootprint": {
+        "current": 102,
+        "target": 98,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 105
+      },
+      "energyConsumption": {
+        "current": 4600,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.80,
+        "unit": "percentage",
+        "target": 0.85
+      }
+    },
+    "majorFactors": ["lighting", "waste-handling", "transportation"],
+    "issues": [
+      "Outdated interior lighting in some sections.",
+      "Inconsistent sorting of mixed recyclables.",
+      "Local delivery vehicles have high mileage."
+    ],
+    "suggestions": [
+      "Upgrade all remaining fluorescent lighting to smart LED panels with occupancy sensors, yielding up to 20% energy reduction in affected areas.",
+      "Implement a comprehensive waste audit for mixed recyclables to identify contamination sources and develop targeted training programs for staff, aiming for 5% improvement in sorting accuracy.",
+      "Explore a trial program for electric cargo e-rickshaws for last-mile deliveries within a 5km radius, reducing local emissions by 10% for these routes. Initial setup cost 20% higher than diesel but provides long-term fuel savings."
+    ]
+  },
+  {
+    "id": "store_nagpur_1",
+    "name": "Walmart Nagpur - Wardhaman Nagar",
+    "location": { "lat": 21.1448, "lng": 79.1171 },
+    "address": "Central Ave, Wardhaman Nagar, Nagpur, Maharashtra 440008",
+    "performance": {
+      "carbonFootprint": {
+        "current": 92,
+        "target": 90,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 95
+      },
+      "energyConsumption": {
+        "current": 3800,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.88,
+        "unit": "percentage",
+        "target": 0.90
+      }
+    },
+    "majorFactors": ["refrigeration", "lighting", "solar-potential"],
+    "issues": [
+      "Minor refrigerant leaks in older display chillers.",
+      "Limited utilization of natural light."
+    ],
+    "suggestions": [
+      "Conduct a proactive leak detection program for all refrigeration units and replace old seals/components to prevent HFC emissions, aiming for 95% leak prevention.",
+      "Integrate daylight harvesting controls with existing lighting systems in skylit areas, reducing artificial lighting use by 15% during daytime hours.",
+      "Assess the potential for rooftop solar energy generation given Nagpur's high solar insolation, targeting 40% of store's energy needs from renewables. Initial cost up to 30% higher, but 25% CO2 reduction."
+    ]
+  },
+  {
+    "id": "store_pune_2",
+    "name": "Walmart Pune - Hadapsar",
+    "location": { "lat": 18.5147, "lng": 73.9317 },
+    "address": "Pune Solapur Road, Hadapsar, Pune, Maharashtra 411028",
+    "performance": {
+      "carbonFootprint": {
+        "current": 108,
+        "target": 100,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 115
+      },
+      "energyConsumption": {
+        "current": 4900,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.77,
+        "unit": "percentage",
+        "target": 0.85
+      }
+    },
+    "majorFactors": ["HVAC", "employee-engagement", "packaging-reduction"],
+    "issues": [
+      "Inefficient climate control in warehouse section.",
+      "Low staff awareness regarding packaging waste reduction."
+    ],
+    "suggestions": [
+      "Install smart HVAC controls in the warehouse, including zone heating/cooling and occupancy sensors, projected 18% energy saving in warehouse climate control.",
+      "Develop an 'Eco-Warrior' training module for all new hires focusing on reducing packaging waste and promoting reusable bag usage by customers, targeting a 10% reduction in plastic bag consumption.",
+      "Initiate a composting program for cafeteria food waste in partnership with local farms, diverting 70% of organic waste from landfills."
+    ]
+  },
+  {
+    "id": "store_surat_1",
+    "name": "Walmart Surat - Dumas Road",
+    "location": { "lat": 21.1444, "lng": 72.7758 },
+    "address": "Dumas Rd, Piplod, Surat, Gujarat 395007",
+    "performance": {
+      "carbonFootprint": {
+        "current": 125,
+        "target": 110,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 120
+      },
+      "energyConsumption": {
+        "current": 5800,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.68,
+        "unit": "percentage",
+        "target": 0.78
+      }
+    },
+    "majorFactors": ["lighting", "water-usage", "transportation"],
+    "issues": [
+      "High energy consumption from outdated exterior lighting.",
+      "Significant water use for floor cleaning.",
+      "Last-mile delivery inefficiencies."
+    ],
+    "suggestions": [
+      "Replace all exterior signage and parking lot lighting with solar-powered LED fixtures, reducing outdoor lighting energy consumption by 100% for this section.",
+      "Implement a water-recycling system for floor cleaning machines, projected 30% reduction in fresh water consumption for cleaning.",
+      "Introduce a micro-hub strategy for last-mile deliveries, using electric vans for urban distribution from a central point, reducing emissions by 15% in Surat city deliveries."
+    ]
+  },
+  {
+    "id": "store_jaipur_2",
+    "name": "Walmart Jaipur - Mansarovar",
+    "location": { "lat": 26.8532, "lng": 75.7601 },
+    "address": "Madhayam Marg, Mansarovar, Jaipur, Rajasthan 302020",
+    "performance": {
+      "carbonFootprint": {
+        "current": 112,
+        "target": 105,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 118
+      },
+      "energyConsumption": {
+        "current": 5000,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.75,
+        "unit": "percentage",
+        "target": 0.82
+      }
+    },
+    "majorFactors": ["HVAC", "food-waste", "employee-commute"],
+    "issues": [
+      "Suboptimal temperature regulation in large retail space.",
+      "Food waste from bakery and produce departments.",
+      "Lack of public transport options for staff."
+    ],
+    "suggestions": [
+      "Install smart building management systems (BMS) to optimize temperature and ventilation based on occupancy and outdoor conditions, aiming for 10% HVAC energy savings.",
+      "Implement a 'zero-waste bakery' initiative by partnering with local cafes to sell unsold items at a discount, and donate remaining to food banks, reducing food waste by 20%.",
+      "Organize shuttle services for employees from key residential areas to improve public transport access and reduce individual car reliance by 25%."
+    ]
+  },
+  {
+    "id": "store_bengaluru_2",
+    "name": "Walmart Bengaluru - Marathahalli",
+    "location": { "lat": 12.9569, "lng": 77.7011 },
+    "address": "Outer Ring Road, Marathahalli, Bengaluru, Karnataka 560037",
+    "performance": {
+      "carbonFootprint": {
+        "current": 122,
+        "target": 115,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 128
+      },
+      "energyConsumption": {
+        "current": 5600,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.73,
+        "unit": "percentage",
+        "target": 0.81
+      }
+    },
+    "majorFactors": ["lighting", "renewable-energy", "e-waste"],
+    "issues": [
+      "Still using some older, less efficient lighting in some sections.",
+      "Limited exploration of renewable energy sources.",
+      "Challenges with electronics recycling."
+    ],
+    "suggestions": [
+      "Conduct a store-wide audit for lighting and replace all inefficient fixtures with smart LED lighting, estimated 15% overall lighting energy reduction.",
+      "Investigate the feasibility of a small-scale wind turbine installation, complementary to solar, to capture wind energy prevalent in the Marathahalli corridor, aiming for an additional 5% energy independence.",
+      "Establish a dedicated electronics waste collection point for customers and partner with a certified local e-waste processor to ensure responsible recycling."
+    ]
+  },
+  {
+    "id": "store_hyderabad_2",
+    "name": "Walmart Hyderabad - Banjara Hills",
+    "location": { "lat": 17.4128, "lng": 78.4485 },
+    "address": "Rd Number 1, Banjara Hills, Hyderabad, Telangana 500034",
+    "performance": {
+      "carbonFootprint": {
+        "current": 100,
+        "target": 95,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 105
+      },
+      "energyConsumption": {
+        "current": 4300,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.88,
+        "unit": "percentage",
+        "target": 0.90
+      }
+    },
+    "majorFactors": ["refrigeration", "water-usage", "employee-engagement"],
+    "issues": [
+      "Refrigeration system occasionally overcooling, wasting energy.",
+      "High water usage in produce misters."
+    ],
+    "suggestions": [
+      "Calibrate refrigeration systems to precise temperature set points to prevent overcooling, saving 5-7% of refrigeration energy.",
+      "Install timed shut-off valves or smart sensors on produce misters to reduce water wastage by 20-25%.",
+      "Organize an internal 'Green Ideas' challenge for employees to submit innovative sustainability solutions for the store, fostering bottom-up engagement."
+    ]
+  },
+  {
+    "id": "store_ahmedabad_2",
+    "name": "Walmart Ahmedabad - Vastrapur",
+    "location": { "lat": 23.0375, "lng": 72.5369 },
+    "address": "S G Highway, Vastrapur, Ahmedabad, Gujarat 380054",
+    "performance": {
+      "carbonFootprint": {
+        "current": 95,
+        "target": 90,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 98
+      },
+      "energyConsumption": {
+        "current": 4000,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.85,
+        "unit": "percentage",
+        "target": 0.88
+      }
+    },
+    "majorFactors": ["HVAC", "water-usage", "food-waste"],
+    "issues": [
+      "Inefficient HVAC distribution in certain sections.",
+      "Water wastage in outdoor cleaning.",
+      "Minor food spoilage in bulk bins."
+    ],
+    "suggestions": [
+      "Implement zone-based HVAC controls with smart sensors for optimal temperature distribution, aiming for 8% HVAC energy savings.",
+      "Utilize recycled water from RO plant reject for outdoor cleaning (e.g., parking lot sweeping), reducing freshwater consumption for this task by 50%.",
+      "Implement smaller, more frequent refills for bulk bins in produce to reduce spoilage, and explore partnerships with local farmers for compostable produce scraps."
+    ]
+  },
+  {
+    "id": "store_pune_3",
+    "name": "Walmart Pune - Pimpri-Chinchwad",
+    "location": { "lat": 18.6347, "lng": 73.8130 },
+    "address": "Old Mumbai Pune Hwy, Pimpri-Chinchwad, Maharashtra 411018",
+    "performance": {
+      "carbonFootprint": {
+        "current": 110,
+        "target": 105,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 113
+      },
+      "energyConsumption": {
+        "current": 5100,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.76,
+        "unit": "percentage",
+        "target": 0.83
+      }
+    },
+    "majorFactors": ["transportation", "energy-efficiency", "waste-handling"],
+    "issues": [
+      "Delivery trucks frequently stuck in Pimpri-Chinchwad traffic.",
+      "Older electrical wiring causing minor energy losses.",
+      "Low rates of cardboard baling."
+    ],
+    "suggestions": [
+      "Coordinate with local traffic authorities for optimal delivery windows, especially during peak hours on Old Mumbai Pune Highway, to reduce truck idling time by 15%.",
+      "Conduct an electrical audit to identify and upgrade inefficient wiring sections, potentially saving 3-5% of overall electrical consumption.",
+      "Invest in a more efficient cardboard baler and provide regular training to staff on its operation, aiming to increase baled cardboard volume by 20% for better recycling efficiency."
+    ]
+  },
+  {
+    "id": "store_nagpur_2",
+    "name": "Walmart Nagpur - Kamptee Road",
+    "location": { "lat": 21.1965, "lng": 79.0805 },
+    "address": "Kamptee Road, Nagpur, Maharashtra 440026",
+    "performance": {
+      "carbonFootprint": {
+        "current": 88,
+        "target": 85,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 90
+      },
+      "energyConsumption": {
+        "current": 3700,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.90,
+        "unit": "percentage",
+        "target": 0.92
+      }
+    },
+    "majorFactors": ["lighting", "renewable-energy", "waste-composting"],
+    "issues": [
+      "Still relying on some incandescent bulbs in non-sales areas.",
+      "Untapped potential for solar water heating."
+    ],
+    "suggestions": [
+      "Phase out all incandescent bulbs and replace with LED, targeting 5% overall energy reduction.",
+      "Install solar water heating systems for staff restrooms and cafeteria, eliminating natural gas/electric heating for hot water, reducing emissions by 2 tonnes CO2e/month.",
+      "Explore partnerships with local municipal organic waste collection for composting non-saleable produce, diverting up to 500 kg/month of organic waste."
+    ]
+  },
+  {
+    "id": "store_lucknow_2",
+    "name": "Walmart Lucknow - Alambagh",
+    "location": { "lat": 26.7909, "lng": 80.9038 },
+    "address": "Kanpur Road, Alambagh, Lucknow, Uttar Pradesh 226005",
+    "performance": {
+      "carbonFootprint": {
+        "current": 100,
+        "target": 95,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 105
+      },
+      "energyConsumption": {
+        "current": 4500,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.85,
+        "unit": "percentage",
+        "target": 0.88
+      }
+    },
+    "majorFactors": ["HVAC", "packaging", "employee-commute"],
+    "issues": [
+      "Older central HVAC system.",
+      "High volume of delivery packaging waste.",
+      "Staff reliance on personal vehicles."
+    ],
+    "suggestions": [
+      "Conduct comprehensive HVAC system maintenance and tune-up, including duct sealing, to improve efficiency by 7-10% without major component replacement.",
+      "Work with suppliers to reduce single-use packaging for incoming goods, prioritizing reusable crates or bulk deliveries, targeting 15% reduction in packaging waste.",
+      "Launch a 'Cycle to Work' initiative for employees, providing secure bicycle parking and changing facilities, promoting healthier and greener commutes."
+    ]
+  },
+  {
+    "id": "store_bhopal_2",
+    "name": "Walmart Bhopal - Lalghati",
+    "location": { "lat": 23.2753, "lng": 77.3826 },
+    "address": "Airport Rd, Lalghati, Bhopal, Madhya Pradesh 462030",
+    "performance": {
+      "carbonFootprint": {
+        "current": 135,
+        "target": 115,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 130
+      },
+      "energyConsumption": {
+        "current": 6200,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.60,
+        "unit": "percentage",
+        "target": 0.70
+      }
+    },
+    "majorFactors": ["refrigeration", "lighting", "waste-handling"],
+    "issues": [
+      "Aging open-front refrigerated display cases.",
+      "High energy consumption from fluorescent lighting.",
+      "Poor organic waste separation."
+    ],
+    "suggestions": [
+      "Install doors or air curtains on open-front refrigerated display cases, reducing energy consumption by 25% for these units and preventing cold air loss.",
+      "Replace all fluorescent tube lighting with energy-efficient LED tubes, projected 18% reduction in overall lighting energy.",
+      "Introduce a separate composting bin system for organic waste from produce and bakery sections, with clear signage and staff training, targeting a 40% increase in organic waste diversion."
+    ]
+  },
+  {
+    "id": "store_kochi_2",
+    "name": "Walmart Kochi - Kadavanthra",
+    "location": { "lat": 9.9723, "lng": 76.2929 },
+    "address": "Kadavanthra, Kochi, Kerala 682020",
+    "performance": {
+      "carbonFootprint": {
+        "current": 78,
+        "target": 75,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 80
+      },
+      "energyConsumption": {
+        "current": 3200,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.94,
+        "unit": "percentage",
+        "target": 0.93
+      }
+    },
+    "majorFactors": ["water-usage", "landscaping", "renewable-energy"],
+    "issues": [
+      "Some decorative fountains with continuous water flow.",
+      "Limited use of rainwater harvesting despite high rainfall."
+    ],
+    "suggestions": [
+      "Convert decorative fountains to recirculating systems with efficient pumps, reducing water consumption by 90% for these features.",
+      "Install small-scale rainwater harvesting tanks for non-potable uses like landscaping irrigation and restroom flushing, leveraging Kerala's high rainfall to achieve 30% water independence for these uses.",
+      "Explore partnerships with local green energy providers for purchasing renewable energy credits (RECs) to offset a portion of grid electricity consumption."
+    ]
+  },
+  {
+    "id": "store_indore_2",
+    "name": "Walmart Indore - Vijay Nagar",
+    "location": { "lat": 22.7538, "lng": 75.9224 },
+    "address": "Scheme No. 74, Vijay Nagar, Indore, Madhya Pradesh 452010",
+    "performance": {
+      "carbonFootprint": {
+        "current": 108,
+        "target": 100,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 110
+      },
+      "energyConsumption": {
+        "current": 4800,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.75,
+        "unit": "percentage",
+        "target": 0.82
+      }
+    },
+    "majorFactors": ["refrigeration", "HVAC", "packaging"],
+    "issues": [
+      "Older walk-in freezer units.",
+      "Ineffective temperature zoning for different store sections.",
+      "High usage of cardboard boxes from incoming shipments."
+    ],
+    "suggestions": [
+      "Replace older walk-in freezer units with new, high-efficiency models with improved insulation, projected 15% energy saving in cold storage.",
+      "Redesign HVAC zoning to better match thermal loads of different store areas (e.g., frozen food vs. apparel), optimizing energy use by 7%.",
+      "Implement a 'cardboard return' program with local suppliers for reusable shipping containers, reducing cardboard waste by 10-12%."
+    ]
+  },
+  {
+    "id": "store_chandigarh_2",
+    "name": "Walmart Chandigarh - Sector 17",
+    "location": { "lat": 30.7397, "lng": 76.7820 },
+    "address": "Sector 17, Chandigarh, 160017",
+    "performance": {
+      "carbonFootprint": {
+        "current": 90,
+        "target": 85,
+        "unit": "tonnes CO2e/month",
+        "lastPeriod": 92
+      },
+      "energyConsumption": {
+        "current": 3900,
+        "unit": "kWh/month"
+      },
+      "wasteDiversion": {
+        "current": 0.91,
+        "unit": "percentage",
+        "target": 0.90
+      }
+    },
+    "majorFactors": ["heating", "waste-handling", "employee-commute"],
+    "issues": [
+      "Sub-optimal heating in staff areas during winter.",
+      "Challenges with sorting mixed paper waste."
+    ],
+    "suggestions": [
+      "Install smart thermostats and personal heating zones in staff breakrooms and offices to optimize comfort and reduce overall heating energy by 5% in these zones.",
+      "Introduce a new paper waste collection system with clear guidelines and separate bins for different paper types, improving sorting accuracy by 8%.",
+      "Promote use of Chandigarh's well-developed cycling infrastructure for employee commutes by providing secure bike parking, changing rooms, and encouraging 'cycle challenges'."
     ]
   }
 ]
