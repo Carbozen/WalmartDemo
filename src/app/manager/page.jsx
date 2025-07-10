@@ -141,7 +141,7 @@ const ManagerLoginPage = () => {
               name="role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="form-select w-full p-3 border rounded-lg appearance-none bg-[image:var(--select-button-svg)] bg-no-repeat bg-right-center focus:outline-none focus:ring-2 focus:ring-[#51946b] transition duration-150"
+              className="form-select w-full p-3 border rounded-lg appearance-none bg-(image:--select-button-svg) bg-no-repeat bg-right-center focus:outline-none focus:ring-2 focus:ring-[#51946b] transition duration-150"
               required
               disabled={isLoading} // Disable input when loading
               style={{

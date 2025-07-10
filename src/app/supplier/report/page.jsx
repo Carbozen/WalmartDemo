@@ -243,7 +243,7 @@ const ReportPage = () => {
                     name="month"
                     value={reportData.month}
                     onChange={handleInputChange}
-                    className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg focus:outline-0 focus:ring-0 border bg-[image:var(--select-button-svg)] placeholder:text-[#51946b] p-[15px] text-base font-normal leading-normal"
+                    className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg focus:outline-0 focus:ring-0 border bg-(image:--select-button-svg) placeholder:text-[#51946b] p-[15px] text-base font-normal leading-normal"
                     style={{
                       color: colors.textPrimary,
                       borderColor: colors.borderColor,
