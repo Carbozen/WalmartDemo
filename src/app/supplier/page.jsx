@@ -1,12 +1,12 @@
-import React from 'react'
-import DummyWalmartLogin from '../components/DummyWalmartLogin'
+import React from "react";
+import DummyWalmartLogin from "../components/DummyWalmartLogin";
 
 const page = () => {
   return (
     <div>
-      <DummyWalmartLogin/>
+      <DummyWalmartLogin />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

@@ -3,48 +3,31 @@
 
 "use client"; // Required for App Router to enable client-side interactivity
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; // For navigation
-
-// Import fonts using next/font
-import { Manrope, Noto_Sans } from 'next/font/google';
-
-const manrope = Manrope({
-  weight: ['400', '500', '700', '800'],
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  display: 'swap',
-});
-
-const notoSans = Noto_Sans({
-  weight: ['400', '500', '700', '900'],
-  subsets: ['latin'],
-  variable: '--font-noto-sans',
-  display: 'swap',
-});
+import React, { useState } from "react";
+import { useRouter } from "next/navigation"; // For navigation
 
 const ReportPage = () => {
   const router = useRouter();
 
   // Define the colors
   const colors = {
-    backgroundPrimary: '#f8fbfa',
-    backgroundSecondary: '#e8f2ec',
-    textPrimary: '#0e1a13',
-    textSecondary: '#51946b',
-    borderColor: '#d1e6d9',
-    buttonBackground: '#39e079',
-    buttonText: '#0e1a13',
+    backgroundPrimary: "#f8fbfa",
+    backgroundSecondary: "#e8f2ec",
+    textPrimary: "#0e1a13",
+    textSecondary: "#51946b",
+    borderColor: "#d1e6d9",
+    buttonBackground: "#39e079",
+    buttonText: "#0e1a13",
   };
 
   // State for form inputs
   const [reportData, setReportData] = useState({
-    month: '',
-    onsiteVehicleFuelConsumption: '',
-    electricityWarehouse: '',
-    refrigerantLeakage: '',
-    materialHandlingEquipment: '',
-    logisticsFleet: '',
+    month: "",
+    onsiteVehicleFuelConsumption: "",
+    electricityWarehouse: "",
+    refrigerantLeakage: "",
+    materialHandlingEquipment: "",
+    logisticsFleet: "",
     excelFile: null,
   });
 
@@ -52,39 +35,43 @@ const ReportPage = () => {
     const { name, value, type, files } = e.target;
     setReportData((prevData) => ({
       ...prevData,
-      [name]: type === 'file' ? files[0] : value,
+      [name]: type === "file" ? files[0] : value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real application, you'd send this data to an API
-    console.log("Submitting Report Data:", reportData);
-    alert('Report Data Submitted (Check console for dummy data)');
+    alert("Report Data Submitted (Check console for dummy data)");
     // You might also clear the form or navigate away after submission
   };
 
   // Handle navigation to leaderboard
   const navigateToLeaderboard = () => {
-    router.push('/supplier/leaderboard');
+    router.push("/supplier/leaderboard");
   };
 
   return (
     <div
-      className={`relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden ${manrope.variable} ${notoSans.variable}`}
+      className="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
       style={{
-        '--select-button-svg': `url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(81,148,107)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e')`,
+        "--select-button-svg": `url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(81,148,107)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e')`,
         backgroundColor: colors.backgroundPrimary,
-        fontFamily: 'var(--font-manrope), var(--font-noto-sans), sans-serif', // Use CSS variables for fonts
       }}
     >
       <div className="layout-container flex h-full grow flex-col">
         {/* Header */}
         <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e8f2ec] px-10 py-3">
-          <div className="flex items-center gap-4" style={{ color: colors.textPrimary }}>
+          <div
+            className="flex items-center gap-4"
+            style={{ color: colors.textPrimary }}
+          >
             <div className="size-4">
               {/* Logo SVG */}
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -93,18 +80,50 @@ const ReportPage = () => {
                 ></path>
               </svg>
             </div>
-            <h2 className="text-lg font-bold leading-tight tracking-[-0.015em]" style={{ color: colors.textPrimary }}>EcoChain</h2>
+            <h2
+              className="text-lg font-bold leading-tight tracking-[-0.015em]"
+              style={{ color: colors.textPrimary }}
+            >
+              EcoChain
+            </h2>
           </div>
           <div className="flex flex-1 justify-end gap-8">
             <div className="flex items-center gap-9">
-              <a className="text-sm font-medium leading-normal" href="/dashboard" style={{ color: colors.textPrimary }}>Dashboard</a>
-              <a className="text-sm font-medium leading-normal" href="/supplier/report" style={{ color: colors.textPrimary }}>Reports</a>
-              <a className="text-sm font-medium leading-normal" href="#" style={{ color: colors.textPrimary }}>Insights</a>
-              <a className="text-sm font-medium leading-normal" href="#" style={{ color: colors.textPrimary }}>Support</a>
+              <a
+                className="text-sm font-medium leading-normal"
+                href="/dashboard"
+                style={{ color: colors.textPrimary }}
+              >
+                Dashboard
+              </a>
+              <a
+                className="text-sm font-medium leading-normal"
+                href="/supplier/report"
+                style={{ color: colors.textPrimary }}
+              >
+                Reports
+              </a>
+              <a
+                className="text-sm font-medium leading-normal"
+                href="#"
+                style={{ color: colors.textPrimary }}
+              >
+                Insights
+              </a>
+              <a
+                className="text-sm font-medium leading-normal"
+                href="#"
+                style={{ color: colors.textPrimary }}
+              >
+                Support
+              </a>
             </div>
             <div
               className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDu-l65MPvjXVAiQLsIctzOZ6BVBetiOefUr9WNZ4nM7LuSfV8tBlwbe445uYqPEcVELC7PoFSQAghzt3-pAwitGb2g2NkepvGHOp5YK5MaKQ75pZwZxQvQnWpr50jluqG_2ok4X8rA3J2w4Xjl51VABVboUdTI1B0B8dQHa4Ub2W1D9DJTUrS-AZFyRF0oPM_1yc1SXyUXDFUDkMMdMP1DGokco2rcbgkYIqyDyQIess-Rw7ByjncG8oGOflN-wY7W-GqQZBZYYfdb")' }}
+              style={{
+                backgroundImage:
+                  'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDu-l65MPvjXVAiQLsIctzOZ6BVBetiOefUr9WNZ4nM7LuSfV8tBlwbe445uYqPEcVELC7PoFSQAghzt3-pAwitGb2g2NkepvGHOp5YK5MaKQ75pZwZxQvQnWpr50jluqG_2ok4X8rA3J2w4Xjl51VABVboUdTI1B0B8dQHa4Ub2W1D9DJTUrS-AZFyRF0oPM_1yc1SXyUXDFUDkMMdMP1DGokco2rcbgkYIqyDyQIess-Rw7ByjncG8oGOflN-wY7W-GqQZBZYYfdb")',
+              }}
             ></div>
           </div>
         </header>
@@ -112,11 +131,24 @@ const ReportPage = () => {
         <div className="gap-1 px-6 flex flex-1 justify-center py-5">
           {/* Sidebar - Simplified */}
           <div className="layout-content-container flex flex-col w-80">
-            <div className="flex h-full min-h-[700px] flex-col justify-between p-4" style={{ backgroundColor: colors.backgroundPrimary }}>
+            <div
+              className="flex h-full min-h-[700px] flex-col justify-between p-4"
+              style={{ backgroundColor: colors.backgroundPrimary }}
+            >
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col">
-                  <h1 className="text-base font-medium leading-normal" style={{ color: colors.textPrimary }}>EcoChain</h1>
-                  <p className="text-sm font-normal leading-normal" style={{ color: colors.textSecondary }}>Supplier Portal</p>
+                  <h1
+                    className="text-base font-medium leading-normal"
+                    style={{ color: colors.textPrimary }}
+                  >
+                    EcoChain
+                  </h1>
+                  <p
+                    className="text-sm font-normal leading-normal"
+                    style={{ color: colors.textSecondary }}
+                  >
+                    Supplier Portal
+                  </p>
                 </div>
                 {/* Single Sidebar Item: Leaderboard */}
                 <div className="flex flex-col gap-2">
@@ -127,11 +159,22 @@ const ReportPage = () => {
                   >
                     <div style={{ color: colors.textPrimary }}>
                       {/* Using a generic chart icon for Leaderboard */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
                         <path d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"></path>
                       </svg>
                     </div>
-                    <p className="text-sm font-medium leading-normal" style={{ color: colors.textPrimary }}>Leaderboard</p>
+                    <p
+                      className="text-sm font-medium leading-normal"
+                      style={{ color: colors.textPrimary }}
+                    >
+                      Leaderboard
+                    </p>
                   </div>
                 </div>
               </div>
@@ -142,28 +185,60 @@ const ReportPage = () => {
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             {/* Breadcrumbs */}
             <div className="flex flex-wrap gap-2 p-4">
-              <a className="text-base font-medium leading-normal" href="/dashboard" style={{ color: colors.textSecondary }}>Home</a>
-              <span className="text-base font-medium leading-normal" style={{ color: colors.textSecondary }}>/</span>
-              <span className="text-base font-medium leading-normal" style={{ color: colors.textPrimary }}>Reports</span>
+              <a
+                className="text-base font-medium leading-normal"
+                href="/dashboard"
+                style={{ color: colors.textSecondary }}
+              >
+                Home
+              </a>
+              <span
+                className="text-base font-medium leading-normal"
+                style={{ color: colors.textSecondary }}
+              >
+                /
+              </span>
+              <span
+                className="text-base font-medium leading-normal"
+                style={{ color: colors.textPrimary }}
+              >
+                Reports
+              </span>
             </div>
 
             <div className="flex flex-wrap justify-between gap-3 p-4">
-              <p className="tracking-light text-[32px] font-bold leading-tight min-w-72" style={{ color: colors.textPrimary }}>
+              <p
+                className="tracking-light text-[32px] font-bold leading-tight min-w-72"
+                style={{ color: colors.textPrimary }}
+              >
                 Environmental Data Submission
               </p>
             </div>
-            <p className="text-base font-normal leading-normal pb-3 pt-1 px-4" style={{ color: colors.textPrimary }}>
-              Please provide the following data points for accurate CO2 calculation and sustainability reporting. Ensure all fields are completed with precise information.
+            <p
+              className="text-base font-normal leading-normal pb-3 pt-1 px-4"
+              style={{ color: colors.textPrimary }}
+            >
+              Please provide the following data points for accurate CO2
+              calculation and sustainability reporting. Ensure all fields are
+              completed with precise information.
             </p>
 
             <form onSubmit={handleSubmit}>
               {/* Reporting Period */}
-              <h2 className="text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" style={{ color: colors.textPrimary }}>
+              <h2
+                className="text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                style={{ color: colors.textPrimary }}
+              >
                 Reporting Period
               </h2>
               <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
                 <label className="flex flex-col min-w-40 flex-1">
-                  <p className="text-base font-medium leading-normal pb-2" style={{ color: colors.textPrimary }}>Select Month</p>
+                  <p
+                    className="text-base font-medium leading-normal pb-2"
+                    style={{ color: colors.textPrimary }}
+                  >
+                    Select Month
+                  </p>
                   <select
                     name="month"
                     value={reportData.month}
@@ -173,7 +248,7 @@ const ReportPage = () => {
                       color: colors.textPrimary,
                       borderColor: colors.borderColor,
                       backgroundColor: colors.backgroundPrimary,
-                      '--select-button-svg': 'var(--select-button-svg)',
+                      "--select-button-svg": "var(--select-button-svg)",
                     }}
                   >
                     <option value="">Select Month</option>
@@ -193,15 +268,21 @@ const ReportPage = () => {
                 </label>
               </div>
 
-         
-
               {/* Energy & Emissions Data */}
-              <h2 className="text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" style={{ color: colors.textPrimary }}>
+              <h2
+                className="text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                style={{ color: colors.textPrimary }}
+              >
                 Energy & Emissions Data
               </h2>
               <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
                 <label className="flex flex-col min-w-40 flex-1">
-                  <p className="text-base font-medium leading-normal pb-2" style={{ color: colors.textPrimary }}>Onsite Veichle Fuel Consumption (kwh)</p>
+                  <p
+                    className="text-base font-medium leading-normal pb-2"
+                    style={{ color: colors.textPrimary }}
+                  >
+                    Onsite Veichle Fuel Consumption (kwh)
+                  </p>
                   <input
                     type="number"
                     name="onsiteVehicleFuelConsumption"
@@ -220,7 +301,12 @@ const ReportPage = () => {
 
               <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
                 <label className="flex flex-col min-w-40 flex-1">
-                  <p className="text-base font-medium leading-normal pb-2" style={{ color: colors.textPrimary }}>Electricity of WareHouse (kwh)</p>
+                  <p
+                    className="text-base font-medium leading-normal pb-2"
+                    style={{ color: colors.textPrimary }}
+                  >
+                    Electricity of WareHouse (kwh)
+                  </p>
                   <input
                     type="number"
                     name="electricityWarehouse"
@@ -239,7 +325,12 @@ const ReportPage = () => {
 
               <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
                 <label className="flex flex-col min-w-40 flex-1">
-                  <p className="text-base font-medium leading-normal pb-2" style={{ color: colors.textPrimary }}>Refrigant Leakage (kg)</p>
+                  <p
+                    className="text-base font-medium leading-normal pb-2"
+                    style={{ color: colors.textPrimary }}
+                  >
+                    Refrigant Leakage (kg)
+                  </p>
                   <input
                     type="number"
                     name="refrigerantLeakage"
@@ -258,7 +349,12 @@ const ReportPage = () => {
 
               <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
                 <label className="flex flex-col min-w-40 flex-1">
-                  <p className="text-base font-medium leading-normal pb-2" style={{ color: colors.textPrimary }}>Material Handling Equipment (kwh)</p>
+                  <p
+                    className="text-base font-medium leading-normal pb-2"
+                    style={{ color: colors.textPrimary }}
+                  >
+                    Material Handling Equipment (kwh)
+                  </p>
                   <input
                     type="number"
                     name="materialHandlingEquipment"
@@ -277,7 +373,12 @@ const ReportPage = () => {
 
               <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
                 <label className="flex flex-col min-w-40 flex-1">
-                  <p className="text-base font-medium leading-normal pb-2" style={{ color: colors.textPrimary }}>Logistics Fleet (kwh)</p>
+                  <p
+                    className="text-base font-medium leading-normal pb-2"
+                    style={{ color: colors.textPrimary }}
+                  >
+                    Logistics Fleet (kwh)
+                  </p>
                   <input
                     type="number"
                     name="logisticsFleet"
@@ -295,15 +396,27 @@ const ReportPage = () => {
               </div>
 
               {/* Excel Upload Section */}
-              <h2 className="text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" style={{ color: colors.textPrimary }}>
+              <h2
+                className="text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+                style={{ color: colors.textPrimary }}
+              >
                 Product Sales Data Upload
               </h2>
-              <p className="text-base font-normal leading-normal pb-3 pt-1 px-4" style={{ color: colors.textPrimary }}>
-                Supply managers can upload an Excel sheet (.csv, .xls, .xlsx) containing all products sold for the week.
+              <p
+                className="text-base font-normal leading-normal pb-3 pt-1 px-4"
+                style={{ color: colors.textPrimary }}
+              >
+                Supply managers can upload an Excel sheet (.csv, .xls, .xlsx)
+                containing all products sold for the week.
               </p>
               <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
                 <label className="flex flex-col min-w-40 flex-1">
-                  <p className="text-base font-medium leading-normal pb-2" style={{ color: colors.textPrimary }}>Upload Products Sold Excel Sheet</p>
+                  <p
+                    className="text-base font-medium leading-normal pb-2"
+                    style={{ color: colors.textPrimary }}
+                  >
+                    Upload Products Sold Excel Sheet
+                  </p>
                   <input
                     type="file"
                     name="excelFile"
@@ -327,15 +440,16 @@ const ReportPage = () => {
                   style={{
                     backgroundColor: colors.buttonBackground,
                     color: colors.buttonText,
-                    '--hover-bg': '#2bbf62',
-                    '--hover-text': colors.buttonText,
+                    "--hover-bg": "#2bbf62",
+                    "--hover-text": colors.buttonText,
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--hover-bg)';
-                    e.currentTarget.style.color = 'var(--hover-text)';
+                    e.currentTarget.style.backgroundColor = "var(--hover-bg)";
+                    e.currentTarget.style.color = "var(--hover-text)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = colors.buttonBackground;
+                    e.currentTarget.style.backgroundColor =
+                      colors.buttonBackground;
                     e.currentTarget.style.color = colors.buttonText;
                   }}
                 >

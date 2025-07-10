@@ -3,58 +3,152 @@
 
 "use client"; // Required for App Router to enable client-side interactivity
 
-import React, { useState, useMemo } from 'react'; // Import useState and useMemo
-import { useRouter } from 'next/navigation'; // For navigation
-
-// Import fonts using next/font
-import { Manrope, Noto_Sans } from 'next/font/google';
-
-const manrope = Manrope({
-  weight: ['400', '500', '700', '800'],
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  display: 'swap',
-});
-
-const notoSans = Noto_Sans({
-  weight: ['400', '500', '700', '900'],
-  subsets: ['latin'],
-  variable: '--font-noto-sans',
-  display: 'swap',
-});
+import React, { useState, useMemo } from "react"; // Import useState and useMemo
+import { useRouter } from "next/navigation"; // For navigation
 
 const LeaderboardPage = () => {
   const router = useRouter();
 
   // Define the colors based on your HTML
   const colors = {
-    backgroundPrimary: '#f8fbfa',
-    backgroundSecondary: '#e8f2ec',
-    textPrimary: '#0e1a13',
-    textSecondary: '#51946b',
-    borderColor: '#d1e6d9',
+    backgroundPrimary: "#f8fbfa",
+    backgroundSecondary: "#e8f2ec",
+    textPrimary: "#0e1a13",
+    textSecondary: "#51946b",
+    borderColor: "#d1e6d9",
   };
 
   // --- State for filters ---
-  const [selectedTimePeriod, setSelectedTimePeriod] = useState('Current'); // Default to 'Current'
+  const [selectedTimePeriod, setSelectedTimePeriod] = useState("Current"); // Default to 'Current'
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for dropdown visibility
 
   // --- More detailed Dummy data for Indian warehouse names and their scores/trends ---
   // Each supplier now has scores for different periods.
-  const rawLeaderboardData = useMemo(() => ([
-    { id: 'mumbai', name: 'Mumbai Logistics Hub', scores: { Current: 95, 'Last Month': 93, 'Last Quarter': 90, 'Last Year': 85 } },
-    { id: 'delhi', name: 'Delhi Distribution Centre', scores: { Current: 92, 'Last Month': 94, 'Last Quarter': 91, 'Last Year': 88 } },
-    { id: 'bangalore', name: 'Bangalore EcoWarehouse', scores: { Current: 90, 'Last Month': 88, 'Last Quarter': 92, 'Last Year': 95 } },
-    { id: 'chennai', name: 'Chennai Green Storage', scores: { Current: 88, 'Last Month': 90, 'Last Quarter': 87, 'Last Year': 80 } },
-    { id: 'kolkata', name: 'Kolkata Fulfillment', scores: { Current: 85, 'Last Month': 86, 'Last Quarter': 84, 'Last Year': 78 } },
-    { id: 'hyderabad', name: 'Hyderabad Smart Depot', scores: { Current: 82, 'Last Month': 80, 'Last Quarter': 83, 'Last Year': 81 } },
-    { id: 'ahmedabad', name: 'Ahmedabad Sustainable Hub', scores: { Current: 80, 'Last Month': 82, 'Last Quarter': 79, 'Last Year': 75 } },
-    { id: 'pune', name: 'Pune Eco-Logistics', scores: { Current: 78, 'Last Month': 75, 'Last Quarter': 77, 'Last Year': 70 } },
-    { id: 'jaipur', name: 'Jaipur CarbonLite', scores: { Current: 75, 'Last Month': 78, 'Last Quarter': 70, 'Last Year': 65 } },
-    { id: 'lucknow', name: 'Lucknow Green Goods', scores: { Current: 72, 'Last Month': 70, 'Last Quarter': 73, 'Last Year': 71 } },
-    { id: 'kochi', name: 'Kochi Port Warehouse', scores: { Current: 70, 'Last Month': 68, 'Last Quarter': 65, 'Last Year': 60 } },
-    { id: 'indore', name: 'Indore Bio-Ware', scores: { Current: 68, 'Last Month': 72, 'Last Quarter': 69, 'Last Year': 62 } },
-  ]), []);
+  const rawLeaderboardData = useMemo(
+    () => [
+      {
+        id: "mumbai",
+        name: "Mumbai Logistics Hub",
+        scores: {
+          Current: 95,
+          "Last Month": 93,
+          "Last Quarter": 90,
+          "Last Year": 85,
+        },
+      },
+      {
+        id: "delhi",
+        name: "Delhi Distribution Centre",
+        scores: {
+          Current: 92,
+          "Last Month": 94,
+          "Last Quarter": 91,
+          "Last Year": 88,
+        },
+      },
+      {
+        id: "bangalore",
+        name: "Bangalore EcoWarehouse",
+        scores: {
+          Current: 90,
+          "Last Month": 88,
+          "Last Quarter": 92,
+          "Last Year": 95,
+        },
+      },
+      {
+        id: "chennai",
+        name: "Chennai Green Storage",
+        scores: {
+          Current: 88,
+          "Last Month": 90,
+          "Last Quarter": 87,
+          "Last Year": 80,
+        },
+      },
+      {
+        id: "kolkata",
+        name: "Kolkata Fulfillment",
+        scores: {
+          Current: 85,
+          "Last Month": 86,
+          "Last Quarter": 84,
+          "Last Year": 78,
+        },
+      },
+      {
+        id: "hyderabad",
+        name: "Hyderabad Smart Depot",
+        scores: {
+          Current: 82,
+          "Last Month": 80,
+          "Last Quarter": 83,
+          "Last Year": 81,
+        },
+      },
+      {
+        id: "ahmedabad",
+        name: "Ahmedabad Sustainable Hub",
+        scores: {
+          Current: 80,
+          "Last Month": 82,
+          "Last Quarter": 79,
+          "Last Year": 75,
+        },
+      },
+      {
+        id: "pune",
+        name: "Pune Eco-Logistics",
+        scores: {
+          Current: 78,
+          "Last Month": 75,
+          "Last Quarter": 77,
+          "Last Year": 70,
+        },
+      },
+      {
+        id: "jaipur",
+        name: "Jaipur CarbonLite",
+        scores: {
+          Current: 75,
+          "Last Month": 78,
+          "Last Quarter": 70,
+          "Last Year": 65,
+        },
+      },
+      {
+        id: "lucknow",
+        name: "Lucknow Green Goods",
+        scores: {
+          Current: 72,
+          "Last Month": 70,
+          "Last Quarter": 73,
+          "Last Year": 71,
+        },
+      },
+      {
+        id: "kochi",
+        name: "Kochi Port Warehouse",
+        scores: {
+          Current: 70,
+          "Last Month": 68,
+          "Last Quarter": 65,
+          "Last Year": 60,
+        },
+      },
+      {
+        id: "indore",
+        name: "Indore Bio-Ware",
+        scores: {
+          Current: 68,
+          "Last Month": 72,
+          "Last Quarter": 69,
+          "Last Year": 62,
+        },
+      },
+    ],
+    []
+  );
 
   // --- Logic to sort and rank the data based on selected time period ---
   const sortedLeaderboardData = useMemo(() => {
@@ -70,13 +164,13 @@ const LeaderboardPage = () => {
 
     // Add ranks and determine trend based on 'Current' vs 'Last Month' (as an example)
     return dataToSort.map((supplier, index) => {
-      const currentScore = supplier.scores['Current'];
-      const lastMonthScore = supplier.scores['Last Month'];
-      let trend = '→'; // No change
+      const currentScore = supplier.scores["Current"];
+      const lastMonthScore = supplier.scores["Last Month"];
+      let trend = "→"; // No change
       if (currentScore > lastMonthScore) {
-        trend = '↑'; // Upward trend
+        trend = "↑"; // Upward trend
       } else if (currentScore < lastMonthScore) {
-        trend = '↓'; // Downward trend
+        trend = "↓"; // Downward trend
       }
 
       return {
@@ -100,17 +194,21 @@ const LeaderboardPage = () => {
 
   // Function to navigate back to the report page or dashboard
   const navigateToReport = () => {
-    router.push('/supplier/report'); // Or '/dashboard' if you prefer
+    router.push("/supplier/report"); // Or '/dashboard' if you prefer
   };
 
-  const timePeriodOptions = ['Current', 'Last Month', 'Last Quarter', 'Last Year'];
+  const timePeriodOptions = [
+    "Current",
+    "Last Month",
+    "Last Quarter",
+    "Last Year",
+  ];
 
   return (
     <div
-      className={`relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden ${manrope.variable} ${notoSans.variable}`}
+      className="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
       style={{
         backgroundColor: colors.backgroundPrimary,
-        fontFamily: 'var(--font-manrope), var(--font-noto-sans), sans-serif',
       }}
     >
       <div className="layout-container flex h-full grow flex-col">
@@ -119,7 +217,11 @@ const LeaderboardPage = () => {
           <div className="flex items-center gap-4 text-[#0e1a13]">
             <div className="size-4">
               {/* Logo SVG */}
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -128,18 +230,43 @@ const LeaderboardPage = () => {
                 ></path>
               </svg>
             </div>
-            <h2 className="text-[#0e1a13] text-lg font-bold leading-tight tracking-[-0.015em]">EcoChain</h2>
+            <h2 className="text-[#0e1a13] text-lg font-bold leading-tight tracking-[-0.015em]">
+              EcoChain
+            </h2>
           </div>
           <div className="flex flex-1 justify-end gap-8">
             <div className="flex items-center gap-9">
-              <a className="text-[#0e1a13] text-sm font-medium leading-normal" href="/dashboard">Dashboard</a>
-              <a className="text-[#0e1a13] text-sm font-medium leading-normal" href="/supplier/report">Reports</a>
-              <a className="text-[#0e1a13] text-sm font-medium leading-normal" href="#">Insights</a>
-              <a className="text-[#0e1a13] text-sm font-medium leading-normal" href="#">Support</a>
+              <a
+                className="text-[#0e1a13] text-sm font-medium leading-normal"
+                href="/dashboard"
+              >
+                Dashboard
+              </a>
+              <a
+                className="text-[#0e1a13] text-sm font-medium leading-normal"
+                href="/supplier/report"
+              >
+                Reports
+              </a>
+              <a
+                className="text-[#0e1a13] text-sm font-medium leading-normal"
+                href="#"
+              >
+                Insights
+              </a>
+              <a
+                className="text-[#0e1a13] text-sm font-medium leading-normal"
+                href="#"
+              >
+                Support
+              </a>
             </div>
             <div
               className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4GYcw8eV8TxRyDLdO2ssnFRQcYEEYcEs3r8RXH3aosAU7AKpnwu597V4hoAbKDZhH3KGyRfMfcQKAVJYsiG_2im2-E0kZ4mcd1nduXR8qjFrum9Q75gqnQiRs96ESQEZm53PjkxCO7-lWaVgAwZfh5cGgKLw3SvH7plRqz5Yxj0mlzAm43fbra2mOOtnfUZZmekw5xbt9xPVvYJqjpznAb3sqo1aIbn-ydbd-MQwuASL-n5fXKHLJ0ii7Gr2b96hix0h1swiAB6Au")' }}
+              style={{
+                backgroundImage:
+                  'url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4GYcw8eV8TxRyDLdO2ssnFRQcYEEYcEs3r8RXH3aosAU7AKpnwu597V4hoAbKDZhH3KGyRfMfcQKAVJYsiG_2im2-E0kZ4mcd1nduXR8qjFrum9Q75gqnQiRs96ESQEZm53PjkxCO7-lWaVgAwZfh5cGgKLw3SvH7plRqz5Yxj0mlzAm43fbra2mOOtnfUZZmekw5xbt9xPVvYJqjpznAb3sqo1aIbn-ydbd-MQwuASL-n5fXKHLJ0ii7Gr2b96hix0h1swiAB6Au")',
+              }}
             ></div>
           </div>
         </header>
@@ -156,15 +283,30 @@ const LeaderboardPage = () => {
               >
                 Back to Report Page
               </a>
-              <span className="text-base font-medium leading-normal" style={{ color: colors.textSecondary }}>/</span>
-              <span className="text-base font-medium leading-normal" style={{ color: colors.textPrimary }}>Leaderboard</span>
+              <span
+                className="text-base font-medium leading-normal"
+                style={{ color: colors.textSecondary }}
+              >
+                /
+              </span>
+              <span
+                className="text-base font-medium leading-normal"
+                style={{ color: colors.textPrimary }}
+              >
+                Leaderboard
+              </span>
             </div>
 
             {/* Title Section */}
             <div className="flex flex-wrap justify-between gap-3 p-4">
               <div className="flex min-w-72 flex-col gap-3">
-                <p className="text-[#0e1a13] tracking-light text-[32px] font-bold leading-tight">Supplier Rankings</p>
-                <p className="text-[#51946b] text-sm font-normal leading-normal">Track and compare supplier performance across sustainability metrics.</p>
+                <p className="text-[#0e1a13] tracking-light text-[32px] font-bold leading-tight">
+                  Supplier Rankings
+                </p>
+                <p className="text-[#51946b] text-sm font-normal leading-normal">
+                  Track and compare supplier performance across sustainability
+                  metrics.
+                </p>
               </div>
             </div>
 
@@ -176,16 +318,34 @@ const LeaderboardPage = () => {
                   className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e8f2ec] pl-4 pr-2 cursor-pointer"
                   onClick={toggleDropdown}
                 >
-                  <p className="text-[#0e1a13] text-sm font-medium leading-normal">{selectedTimePeriod}</p>
-                  <div className="text-[#0e1a13]" data-icon="CaretDown" data-size="20px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <p className="text-[#0e1a13] text-sm font-medium leading-normal">
+                    {selectedTimePeriod}
+                  </p>
+                  <div
+                    className="text-[#0e1a13]"
+                    data-icon="CaretDown"
+                    data-size="20px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
                       <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
                     </svg>
                   </div>
                 </button>
                 {isDropdownOpen && (
                   <div className="absolute z-10 mt-2 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                    <div
+                      className="py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="options-menu"
+                    >
                       {timePeriodOptions.map((period) => (
                         <a
                           key={period}
@@ -207,18 +367,44 @@ const LeaderboardPage = () => {
 
               {/* Category Button (static for now) */}
               <button className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e8f2ec] pl-4 pr-2">
-                <p className="text-[#0e1a13] text-sm font-medium leading-normal">Category</p>
-                <div className="text-[#0e1a13]" data-icon="CaretDown" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <p className="text-[#0e1a13] text-sm font-medium leading-normal">
+                  Category
+                </p>
+                <div
+                  className="text-[#0e1a13]"
+                  data-icon="CaretDown"
+                  data-size="20px"
+                  data-weight="regular"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                  >
                     <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
                   </svg>
                 </div>
               </button>
               {/* Product Type Button (static for now) */}
               <button className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e8f2ec] pl-4 pr-2">
-                <p className="text-[#0e1a13] text-sm font-medium leading-normal">Product Type</p>
-                <div className="text-[#0e1a13]" data-icon="CaretDown" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <p className="text-[#0e1a13] text-sm font-medium leading-normal">
+                  Product Type
+                </p>
+                <div
+                  className="text-[#0e1a13]"
+                  data-icon="CaretDown"
+                  data-size="20px"
+                  data-weight="regular"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                  >
                     <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
                   </svg>
                 </div>
@@ -231,33 +417,81 @@ const LeaderboardPage = () => {
                 <table className="flex-1">
                   <thead>
                     <tr className="bg-[#f8fbfa]">
-                      <th className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-120 px-4 py-3 text-left text-[#0e1a13] w-[100px] text-sm font-medium leading-normal">Rank</th>
+                      <th className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-120 px-4 py-3 text-left text-[#0e1a13] w-[100px] text-sm font-medium leading-normal">
+                        Rank
+                      </th>
                       <th className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-240 px-4 py-3 text-left text-[#0e1a13] w-[250px] text-sm font-medium leading-normal">
                         Supplier
                       </th>
-                      <th className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-360 px-4 py-3 text-left text-[#0e1a13] w-[150px] text-sm font-medium leading-normal">Score ({selectedTimePeriod})</th> {/* Dynamic header */}
-                      <th className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-480 px-4 py-3 text-left text-[#0e1a13] w-[100px] text-sm font-medium leading-normal">Trend</th>
+                      <th className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-360 px-4 py-3 text-left text-[#0e1a13] w-[150px] text-sm font-medium leading-normal">
+                        Score ({selectedTimePeriod})
+                      </th>{" "}
+                      {/* Dynamic header */}
+                      <th className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-480 px-4 py-3 text-left text-[#0e1a13] w-[100px] text-sm font-medium leading-normal">
+                        Trend
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {sortedLeaderboardData.map((supplier) => (
-                      <tr key={supplier.id} className="border-t border-t-[#d1e6d9]"> {/* Use unique ID for key */}
-                        <td className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-120 h-[72px] px-4 py-2 w-[100px] text-[#0e1a13] text-sm font-normal leading-normal">{supplier.rank}</td>
+                      <tr
+                        key={supplier.id}
+                        className="border-t border-t-[#d1e6d9]"
+                      >
+                        {" "}
+                        {/* Use unique ID for key */}
+                        <td className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-120 h-[72px] px-4 py-2 w-[100px] text-[#0e1a13] text-sm font-normal leading-normal">
+                          {supplier.rank}
+                        </td>
                         <td className="table-867d7182-fc0d-4b27-9025-909706c7cf79-column-240 h-[72px] px-4 py-2 w-[250px] text-[#0e1a13] text-sm font-normal leading-normal">
                           {supplier.name}
                         </td>
-                        <td className={`table-867d7182-fc0d-4b27-9025-909706c7cf79-column-360 h-[72px] px-4 py-2 w-[150px] text-sm font-normal leading-normal ${supplier.displayScore >= 80 ? 'text-[#39e079]' : 'text-[#51946b]'}`}>{supplier.displayScore}</td>
-                        <td className={`table-867d7182-fc0d-4b27-9025-909706c7cf79-column-480 h-[72px] px-4 py-2 w-[100px] text-sm font-normal leading-normal ${supplier.trend === '↑' ? 'text-[#39e079]' : supplier.trend === '↓' ? 'text-[#e03939]' : 'text-[#51946b]'}`}>{supplier.trend}</td>
+                        <td
+                          className={`table-867d7182-fc0d-4b27-9025-909706c7cf79-column-360 h-[72px] px-4 py-2 w-[150px] text-sm font-normal leading-normal ${
+                            supplier.displayScore >= 80
+                              ? "text-[#39e079]"
+                              : "text-[#51946b]"
+                          }`}
+                        >
+                          {supplier.displayScore}
+                        </td>
+                        <td
+                          className={`table-867d7182-fc0d-4b27-9025-909706c7cf79-column-480 h-[72px] px-4 py-2 w-[100px] text-sm font-normal leading-normal ${
+                            supplier.trend === "↑"
+                              ? "text-[#39e079]"
+                              : supplier.trend === "↓"
+                              ? "text-[#e03939]"
+                              : "text-[#51946b]"
+                          }`}
+                        >
+                          {supplier.trend}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               <style jsx>{`
-                @container (max-width: 120px) { .table-867d7182-fc0d-4b27-9025-909706c7cf79-column-120 { display: none; } }
-                @container (max-width: 240px) { .table-867d7182-fc0d-4b27-9025-909706c7cf79-column-240 { display: none; } }
-                @container (max-width: 360px) { .table-867d7182-fc0d-4b27-9025-909706c7cf79-column-360 { display: none; } }
-                @container (max-width: 480px) { .table-867d7182-fc0d-4b27-9025-909706c7cf79-column-480 { display: none; } }
+                @container (max-width: 120px) {
+                  .table-867d7182-fc0d-4b27-9025-909706c7cf79-column-120 {
+                    display: none;
+                  }
+                }
+                @container (max-width: 240px) {
+                  .table-867d7182-fc0d-4b27-9025-909706c7cf79-column-240 {
+                    display: none;
+                  }
+                }
+                @container (max-width: 360px) {
+                  .table-867d7182-fc0d-4b27-9025-909706c7cf79-column-360 {
+                    display: none;
+                  }
+                }
+                @container (max-width: 480px) {
+                  .table-867d7182-fc0d-4b27-9025-909706c7cf79-column-480 {
+                    display: none;
+                  }
+                }
               `}</style>
             </div>
           </div>

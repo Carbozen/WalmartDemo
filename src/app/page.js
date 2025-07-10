@@ -1,18 +1,24 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen min-w-screen p-4 bg-white" style={{ backgroundImage: "url('/abstract.png')" }}>
-      <div className='flex items-baseline'>
-        <h1 className="text-5xl font-bold mb-6 text-gray-800">EcoSync: Reduce Your Emissions</h1>
-        <Image src="/leaf.png" width={50} height={50}></Image>
+    <main
+      className="flex flex-col items-center justify-center min-h-screen min-w-screen p-4 bg-white"
+      style={{ backgroundImage: "url('/abstract.png')" }}
+    >
+      <div className="flex items-baseline">
+        <h1 className="text-5xl font-bold mb-6 text-gray-800">
+          EcoSync: Reduce Your Emissions
+        </h1>
+        <Image src="/leaf.png" width={50} height={50} alt="leaf"></Image>
+      </div>
 
-      </div> 
-      
-      <h3 className=' text-gray-700 mb-10'>EcoSync is a smart platform designed to help Walmart suppliers reduce scope 3 emissions through data-driven insights and AI recommendations </h3>
-      
+      <h3 className=" text-gray-700 mb-10">
+        EcoSync is a smart platform designed to help Walmart suppliers reduce
+        scope 3 emissions through data-driven insights and AI recommendations{" "}
+      </h3>
+
       <div className="flex gap-5">
         <Link
           href="/supplier"
@@ -25,7 +31,7 @@ export default function Home() {
             height={50}
             className="w-[50px] h-[50px] object-cover rounded"
           />
-          I'm a Supplier
+          I&apos;m a Supplier
         </Link>
 
         <Link
@@ -39,7 +45,7 @@ export default function Home() {
             height={50}
             className="w-[50px] h-[50px] object-cover rounded"
           />
-          I'm a Manager
+          I&apos;m a Manager
         </Link>
       </div>
     </main>

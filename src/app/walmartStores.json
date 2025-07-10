@@ -52,7 +52,7 @@
       "wasteDiversion": {
         "current": 0.92,
         "unit": "percentage",
-        "target": 0.90
+        "target": 0.9
       }
     },
     "majorFactors": ["water-usage", "packaging", "energy-efficiency"],
@@ -83,9 +83,9 @@
         "unit": "kWh/month"
       },
       "wasteDiversion": {
-        "current": 0.70,
+        "current": 0.7,
         "unit": "percentage",
-        "target": 0.80
+        "target": 0.8
       }
     },
     "majorFactors": ["refrigeration", "renewable-energy", "waste-composting"],
@@ -185,7 +185,7 @@
       "wasteDiversion": {
         "current": 0.72,
         "unit": "percentage",
-        "target": 0.80
+        "target": 0.8
       }
     },
     "majorFactors": ["lighting", "employee-engagement", "e-waste"],
@@ -255,9 +255,7 @@
       }
     },
     "majorFactors": ["waste-management", "energy-monitoring"],
-    "issues": [
-      "Waste disposal contracts not fully optimized for recycling."
-    ],
+    "issues": ["Waste disposal contracts not fully optimized for recycling."],
     "suggestions": [
       "Review and renegotiate waste disposal contracts with local Pune agencies for higher recycling rates, specifically for mixed recyclables and food waste, aiming for a 10% increase in overall diversion.",
       "Implement a zero-waste policy for back-of-house operations, focusing on packaging reduction from suppliers and reusable container programs for internal transfers.",
@@ -350,7 +348,7 @@
       "wasteDiversion": {
         "current": 0.87,
         "unit": "percentage",
-        "target": 0.90
+        "target": 0.9
       }
     },
     "majorFactors": ["heating", "water-usage", "landscaping"],
@@ -381,9 +379,9 @@
         "unit": "kWh/month"
       },
       "wasteDiversion": {
-        "current": 0.70,
+        "current": 0.7,
         "unit": "percentage",
-        "target": 0.80
+        "target": 0.8
       }
     },
     "majorFactors": ["HVAC", "transportation", "food-waste"],
@@ -401,7 +399,7 @@
   {
     "id": "store_kochi_1",
     "name": "Walmart Kochi - LuLu Mall",
-    "location": { "lat": 10.0270, "lng": 76.3315 },
+    "location": { "lat": 10.027, "lng": 76.3315 },
     "address": "34/1000, N. H 47, Edappally, Kochi, Kerala 682024",
     "performance": {
       "carbonFootprint": {
@@ -417,7 +415,7 @@
       "wasteDiversion": {
         "current": 0.93,
         "unit": "percentage",
-        "target": 0.90
+        "target": 0.9
       }
     },
     "majorFactors": ["water-usage", "employee-engagement", "packaging"],
@@ -448,7 +446,7 @@
         "unit": "kWh/month"
       },
       "wasteDiversion": {
-        "current": 0.80,
+        "current": 0.8,
         "unit": "percentage",
         "target": 0.85
       }
@@ -484,7 +482,7 @@
       "wasteDiversion": {
         "current": 0.88,
         "unit": "percentage",
-        "target": 0.90
+        "target": 0.9
       }
     },
     "majorFactors": ["refrigeration", "lighting", "solar-potential"],
@@ -652,7 +650,7 @@
       "wasteDiversion": {
         "current": 0.88,
         "unit": "percentage",
-        "target": 0.90
+        "target": 0.9
       }
     },
     "majorFactors": ["refrigeration", "water-usage", "employee-engagement"],
@@ -703,7 +701,7 @@
   {
     "id": "store_pune_3",
     "name": "Walmart Pune - Pimpri-Chinchwad",
-    "location": { "lat": 18.6347, "lng": 73.8130 },
+    "location": { "lat": 18.6347, "lng": 73.813 },
     "address": "Old Mumbai Pune Hwy, Pimpri-Chinchwad, Maharashtra 411018",
     "performance": {
       "carbonFootprint": {
@@ -751,7 +749,7 @@
         "unit": "kWh/month"
       },
       "wasteDiversion": {
-        "current": 0.90,
+        "current": 0.9,
         "unit": "percentage",
         "target": 0.92
       }
@@ -818,9 +816,9 @@
         "unit": "kWh/month"
       },
       "wasteDiversion": {
-        "current": 0.60,
+        "current": 0.6,
         "unit": "percentage",
-        "target": 0.70
+        "target": 0.7
       }
     },
     "majorFactors": ["refrigeration", "lighting", "waste-handling"],
@@ -905,7 +903,7 @@
   {
     "id": "store_chandigarh_2",
     "name": "Walmart Chandigarh - Sector 17",
-    "location": { "lat": 30.7397, "lng": 76.7820 },
+    "location": { "lat": 30.7397, "lng": 76.782 },
     "address": "Sector 17, Chandigarh, 160017",
     "performance": {
       "carbonFootprint": {
@@ -921,7 +919,7 @@
       "wasteDiversion": {
         "current": 0.91,
         "unit": "percentage",
-        "target": 0.90
+        "target": 0.9
       }
     },
     "majorFactors": ["heating", "waste-handling", "employee-commute"],

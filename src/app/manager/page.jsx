@@ -2,46 +2,28 @@
 
 "use client"; // Required for client-side interactivity like useState and useRouter
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; // For navigation in App Router
-
-// Import Next.js Font Optimization
-import { Manrope, Noto_Sans } from 'next/font/google';
-
-// Load fonts using next/font for better performance and consistency
-const manrope = Manrope({
-  weight: ['400', '500', '700', '800'],
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  display: 'swap',
-});
-
-const notoSans = Noto_Sans({
-  weight: ['400', '500', '700', '900'],
-  subsets: ['latin'],
-  variable: '--font-noto-sans',
-  display: 'swap',
-});
+import React, { useState } from "react";
+import { useRouter } from "next/navigation"; // For navigation in App Router
 
 const ManagerLoginPage = () => {
   const router = useRouter(); // Initialize Next.js router for redirection
 
   // State variables to hold form input values
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [role, setRole] = useState(''); // Stores selected role from dropdown
-  const [employeeId, setEmployeeId] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState(""); // Stores selected role from dropdown
+  const [employeeId, setEmployeeId] = useState("");
   const [isLoading, setIsLoading] = useState(false); // New state for loading indicator
 
   // Define color palette, consistent with your other components
   const colors = {
-    backgroundPrimary: '#f8fbfa',
-    backgroundSecondary: '#e8f2ec',
-    textPrimary: '#0e1a13',
-    textSecondary: '#51946b',
-    borderColor: '#d1e6d9',
-    buttonBackground: '#39e079', // Green button for login
-    buttonText: '#0e1a13', // Dark text on green button
+    backgroundPrimary: "#f8fbfa",
+    backgroundSecondary: "#e8f2ec",
+    textPrimary: "#0e1a13",
+    textSecondary: "#51946b",
+    borderColor: "#d1e6d9",
+    buttonBackground: "#39e079", // Green button for login
+    buttonText: "#0e1a13", // Dark text on green button
   };
 
   // List of manager roles for the dropdown
@@ -50,7 +32,7 @@ const ManagerLoginPage = () => {
     "Sustainability Lead",
     "Operations Analyst",
     "Logistics Coordinator",
-    "Store Supervisor"
+    "Store Supervisor",
   ];
 
   // Handle form submission
@@ -58,33 +40,27 @@ const ManagerLoginPage = () => {
     e.preventDefault(); // Prevent default form submission behavior (page reload)
     setIsLoading(true); // Set loading to true when form is submitted
 
-    // Log the dummy login data to the console for demonstration
-    console.log("Simulating Login Attempt:", {
-      email,
-      password,
-      role,
-      employeeId,
-    });
-
-    // Simulate successful login by redirecting to the dashboard after a delay
     setTimeout(() => {
-      router.push('/manager/dashboard');
+      router.push("/manager/dashboard");
     }, 2000); // Simulate a 2-second delay for redirection
   };
 
   return (
     <div
-      className={`flex items-center justify-center min-h-screen p-4 ${manrope.variable} ${notoSans.variable}`}
+      className="flex items-center justify-center min-h-screen p-4"
       style={{
         backgroundColor: colors.backgroundPrimary,
-        fontFamily: 'var(--font-manrope), var(--font-noto-sans), sans-serif',
       }}
     >
       <div className="bg-white p-8 rounded-lg shadow-xl w-full max-w-md border border-gray-200">
         <div className="flex items-center justify-center mb-6">
           <div className="size-8 mr-3" style={{ color: colors.textPrimary }}>
             {/* EcoChain Logo SVG */}
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -95,12 +71,17 @@ const ManagerLoginPage = () => {
           </div>
           <h1 className="text-3xl font-bold text-[#0e1a13]">Manager Login</h1>
         </div>
-        <p className="text-center text-gray-600 mb-6">Welcome back! Please enter your credentials.</p>
+        <p className="text-center text-gray-600 mb-6">
+          Welcome back! Please enter your credentials.
+        </p>
 
         <form onSubmit={handleSubmit}>
           {/* Email Address / Username Field */}
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-[#0e1a13] mb-1">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-[#0e1a13] mb-1"
+            >
               Work Email / Username
             </label>
             <input
@@ -123,7 +104,10 @@ const ManagerLoginPage = () => {
 
           {/* Password Field */}
           <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium text-[#0e1a13] mb-1">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-[#0e1a13] mb-1"
+            >
               Password
             </label>
             <input
@@ -146,7 +130,10 @@ const ManagerLoginPage = () => {
 
           {/* Role/Access Level Dropdown */}
           <div className="mb-4">
-            <label htmlFor="role" className="block text-sm font-medium text-[#0e1a13] mb-1">
+            <label
+              htmlFor="role"
+              className="block text-sm font-medium text-[#0e1a13] mb-1"
+            >
               Your Role
             </label>
             <select
@@ -161,7 +148,7 @@ const ManagerLoginPage = () => {
                 borderColor: colors.borderColor,
                 backgroundColor: colors.backgroundPrimary,
                 color: colors.textPrimary,
-                '--select-button-svg': `url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(81,148,107)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e')`,
+                "--select-button-svg": `url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(81,148,107)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e')`,
               }}
             >
               <option value="">Select your role</option>
@@ -175,7 +162,10 @@ const ManagerLoginPage = () => {
 
           {/* Employee ID Field */}
           <div className="mb-6">
-            <label htmlFor="employeeId" className="block text-sm font-medium text-[#0e1a13] mb-1">
+            <label
+              htmlFor="employeeId"
+              className="block text-sm font-medium text-[#0e1a13] mb-1"
+            >
               Employee ID
             </label>
             <input
@@ -203,12 +193,12 @@ const ManagerLoginPage = () => {
             style={{
               backgroundColor: colors.buttonBackground,
               color: colors.buttonText,
-              '--hover-bg': '#2bbf62', // A slightly darker green for hover
-              '--hover-text': colors.buttonText,
+              "--hover-bg": "#2bbf62", // A slightly darker green for hover
+              "--hover-text": colors.buttonText,
             }}
             onMouseEnter={(e) => {
               if (!isLoading) {
-                e.currentTarget.style.backgroundColor = 'var(--hover-bg)';
+                e.currentTarget.style.backgroundColor = "var(--hover-bg)";
               }
             }}
             onMouseLeave={(e) => {
@@ -220,14 +210,30 @@ const ManagerLoginPage = () => {
           >
             {isLoading ? (
               <>
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                <svg
+                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
                 </svg>
                 Redirecting...
               </>
             ) : (
-              'Login'
+              "Login"
             )}
           </button>
         </form>

@@ -3,36 +3,18 @@
 
 "use client"; // Important for client-side interactivity in Next.js App Router
 
-import React, { useState, useEffect, useMemo } from 'react';
-import { useRouter } from 'next/navigation'; // For navigation
-
-// Import Next.js Font Optimization
-import { Manrope, Noto_Sans } from 'next/font/google';
-
-// Load fonts
-const manrope = Manrope({
-  weight: ['400', '500', '700', '800'],
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  display: 'swap',
-});
-
-const notoSans = Noto_Sans({
-  weight: ['400', '500', '700', '900'],
-  subsets: ['latin'],
-  variable: '--font-noto-sans',
-  display: 'swap',
-});
+import React, { useState, useEffect, useMemo } from "react";
+import { useRouter } from "next/navigation"; // For navigation
 
 // Import your components
 // Adjust paths based on your project structure (e.g., if components is sibling to app)
-import IndiaMap from '../../components/IndiaMap';
-import StoreDrawer from '../../components/StoreDrawer';
+import IndiaMap from "../../components/IndiaMap";
+import StoreDrawer from "../../components/StoreDrawer";
 
 // Function to fetch store data (simulates an API call from a JSON file)
 async function fetchWalmartStoresData() {
   try {
-    const response = await import('../../walmartStores.json');
+    const response = await import("../../walmartStores.json");
     return response.default;
   } catch (error) {
     console.error("Failed to load Walmart store data:", error);
@@ -47,31 +29,31 @@ const ManagerDashboardPage = () => {
   const [selectedStore, setSelectedStore] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   // Renamed from filterType to carbonPerformanceFilter to be more specific
-  const [carbonPerformanceFilter, setCarbonPerformanceFilter] = useState('all');
+  const [carbonPerformanceFilter, setCarbonPerformanceFilter] = useState("all");
   // New state for major factor checkboxes
   const [majorFactorFilters, setMajorFactorFilters] = useState({
     refrigeration: false,
     transportation: false,
-    'waste-handling': false, // Use the exact string from JSON
-    'energy-efficiency': false,
+    "waste-handling": false, // Use the exact string from JSON
+    "energy-efficiency": false,
     lighting: false,
     water: false,
     HVAC: false,
-    'employee-engagement': false,
+    "employee-engagement": false,
     packaging: false,
-    'food-waste': false
+    "food-waste": false,
   });
 
   const colors = {
-    backgroundPrimary: '#f8fbfa',
-    backgroundSecondary: '#e8f2ec',
-    textPrimary: '#0e1a13',
-    textSecondary: '#51946b',
-    borderColor: '#d1e6d9',
+    backgroundPrimary: "#f8fbfa",
+    backgroundSecondary: "#e8f2ec",
+    textPrimary: "#0e1a13",
+    textSecondary: "#51946b",
+    borderColor: "#d1e6d9",
   };
 
   useEffect(() => {
-    fetchWalmartStoresData().then(data => {
+    fetchWalmartStoresData().then((data) => {
       setAllStores(data);
     });
   }, []);
@@ -79,7 +61,7 @@ const ManagerDashboardPage = () => {
   // Handler for major factor checkbox changes
   const handleMajorFactorChange = (event) => {
     const { name, checked } = event.target;
-    setMajorFactorFilters(prevFilters => ({
+    setMajorFactorFilters((prevFilters) => ({
       ...prevFilters,
       [name]: checked,
     }));
@@ -89,32 +71,53 @@ const ManagerDashboardPage = () => {
     let storesToFilter = [...allStores];
 
     // Apply carbon performance filter
-    if (carbonPerformanceFilter === 'best') {
-      storesToFilter = storesToFilter.sort((a, b) => a.performance.carbonFootprint.current - b.performance.carbonFootprint.current).slice(0, 5);
-    } else if (carbonPerformanceFilter === 'worst') {
-      storesToFilter = storesToFilter.sort((a, b) => b.performance.carbonFootprint.current - a.performance.carbonFootprint.current).slice(0, 5);
-    } else if (carbonPerformanceFilter === 'lessThan100') {
-      storesToFilter = storesToFilter.filter(store => store.performance.carbonFootprint.current < 100);
-    } else if (carbonPerformanceFilter === '100to120') {
-      storesToFilter = storesToFilter.filter(store => store.performance.carbonFootprint.current >= 100 && store.performance.carbonFootprint.current <= 120);
-    } else if (carbonPerformanceFilter === 'greaterThan120') {
-      storesToFilter = storesToFilter.filter(store => store.performance.carbonFootprint.current > 120);
+    if (carbonPerformanceFilter === "best") {
+      storesToFilter = storesToFilter
+        .sort(
+          (a, b) =>
+            a.performance.carbonFootprint.current -
+            b.performance.carbonFootprint.current
+        )
+        .slice(0, 5);
+    } else if (carbonPerformanceFilter === "worst") {
+      storesToFilter = storesToFilter
+        .sort(
+          (a, b) =>
+            b.performance.carbonFootprint.current -
+            a.performance.carbonFootprint.current
+        )
+        .slice(0, 5);
+    } else if (carbonPerformanceFilter === "lessThan100") {
+      storesToFilter = storesToFilter.filter(
+        (store) => store.performance.carbonFootprint.current < 100
+      );
+    } else if (carbonPerformanceFilter === "100to120") {
+      storesToFilter = storesToFilter.filter(
+        (store) =>
+          store.performance.carbonFootprint.current >= 100 &&
+          store.performance.carbonFootprint.current <= 120
+      );
+    } else if (carbonPerformanceFilter === "greaterThan120") {
+      storesToFilter = storesToFilter.filter(
+        (store) => store.performance.carbonFootprint.current > 120
+      );
     }
 
     // Apply major factor checkbox filters
-    const activeMajorFactorFilters = Object.keys(majorFactorFilters).filter(key => majorFactorFilters[key]);
+    const activeMajorFactorFilters = Object.keys(majorFactorFilters).filter(
+      (key) => majorFactorFilters[key]
+    );
 
     if (activeMajorFactorFilters.length > 0) {
-      storesToFilter = storesToFilter.filter(store =>
-        activeMajorFactorFilters.every(factor =>
-          store.majorFactors && store.majorFactors.includes(factor)
+      storesToFilter = storesToFilter.filter((store) =>
+        activeMajorFactorFilters.every(
+          (factor) => store.majorFactors && store.majorFactors.includes(factor)
         )
       );
     }
 
     return storesToFilter;
   }, [allStores, carbonPerformanceFilter, majorFactorFilters]);
-
 
   const handleStoreClick = (store) => {
     setSelectedStore(store);
@@ -128,18 +131,24 @@ const ManagerDashboardPage = () => {
 
   return (
     <div
-      className={`relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden ${manrope.variable} ${notoSans.variable}`}
+      className="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
       style={{
         backgroundColor: colors.backgroundPrimary,
-        fontFamily: 'var(--font-manrope), var(--font-noto-sans), sans-serif',
       }}
     >
       <div className="layout-container flex h-full grow flex-col">
         {/* Header section */}
         <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e8f2ec] px-10 py-3">
-          <div className="flex items-center gap-4" style={{ color: colors.textPrimary }}>
+          <div
+            className="flex items-center gap-4"
+            style={{ color: colors.textPrimary }}
+          >
             <div className="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -148,42 +157,87 @@ const ManagerDashboardPage = () => {
                 ></path>
               </svg>
             </div>
-            <h2 className="text-[#0e1a13] text-lg font-bold leading-tight tracking-[-0.015em]">EcoChain</h2>
+            <h2 className="text-[#0e1a13] text-lg font-bold leading-tight tracking-[-0.015em]">
+              EcoChain
+            </h2>
           </div>
           <div className="flex flex-1 justify-end gap-8">
             <div className="flex items-center gap-9">
-              <a className="text-[#0e1a13] text-sm font-medium leading-normal" href="/dashboard">Dashboard</a>
-              <a className="text-[#0e1a13] text-sm font-medium leading-normal" href="/supplier/report">Reports</a>
-              <a className="text-[#0e1a13] text-sm font-medium leading-normal" href="#">Insights</a>
-              <a className="text-[#0e1a13] text-sm font-medium leading-normal" href="#">Support</a>
+              <a
+                className="text-[#0e1a13] text-sm font-medium leading-normal"
+                href="/dashboard"
+              >
+                Dashboard
+              </a>
+              <a
+                className="text-[#0e1a13] text-sm font-medium leading-normal"
+                href="/supplier/report"
+              >
+                Reports
+              </a>
+              <a
+                className="text-[#0e1a13] text-sm font-medium leading-normal"
+                href="#"
+              >
+                Insights
+              </a>
+              <a
+                className="text-[#0e1a13] text-sm font-medium leading-normal"
+                href="#"
+              >
+                Support
+              </a>
             </div>
             <div
               className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4GYcw8eV8TxRyDLdO2ssnFRQcYEEYcEs3r8RXH3aosAU7AKpnwu597V4hoAbKDZhH3KGyRfMfcQKAVJYsiG_2im2-E0kZ4mcd1nduXR8qjFrum9Q75gqnQiRs96ESQEZm53PjkxCO7-lWaVgAwZfh5cGgKLw3SvH7plRqz5Yxj0mlzAm43fbra2mOOtnfUZZmekw5xbt9xPVvYJqjpznAb3sqo1aIbn-ydbd-MQwuASL-n5fXKHLJ0ii7Gr2b96hix0h1swiAB6Au")' }}
+              style={{
+                backgroundImage:
+                  'url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4GYcw8eV8TxRyDLdO2ssnFRQcYEEYcEs3r8RXH3aosAU7AKpnwu597V4hoAbKDZhH3KGyRfMfcQKAVJYsiG_2im2-E0kZ4mcd1nduXR8qjFrum9Q75gqnQiRs96ESQEZm53PjkxCO7-lWaVgAwZfh5cGgKLw3SvH7plRqz5Yxj0mlzAm43fbra2mOOtnfUZZmekw5xbt9xPVvYJqjpznAb3sqo1aIbn-ydbd-MQwuASL-n5fXKHLJ0ii7Gr2b96hix0h1swiAB6Au")',
+              }}
             ></div>
           </div>
         </header>
 
         {/* Main Content Area - dynamically adjusts padding for side drawer */}
-        <div className={`px-10 flex flex-1 flex-col py-5 transition-all duration-300 ease-in-out ${isDrawerOpen ? 'pr-96' : ''}`}>
+        <div
+          className={`px-10 flex flex-1 flex-col py-5 transition-all duration-300 ease-in-out ${
+            isDrawerOpen ? "pr-96" : ""
+          }`}
+        >
           {/* Breadcrumbs / Navigation */}
           <div className="flex flex-wrap gap-2 p-4">
             <a
               className="text-base font-medium leading-normal cursor-pointer"
               style={{ color: colors.textSecondary }}
-              onClick={() => router.push('/dashboard')}
+              onClick={() => router.push("/dashboard")}
             >
               Home
             </a>
-            <span className="text-base font-medium leading-normal" style={{ color: colors.textSecondary }}>/</span>
-            <span className="text-base font-medium leading-normal" style={{ color: colors.textPrimary }}>Store Performance Map</span>
+            <span
+              className="text-base font-medium leading-normal"
+              style={{ color: colors.textSecondary }}
+            >
+              /
+            </span>
+            <span
+              className="text-base font-medium leading-normal"
+              style={{ color: colors.textPrimary }}
+            >
+              Store Performance Map
+            </span>
           </div>
 
           {/* Title and Description */}
           <div className="flex flex-wrap justify-between gap-3 p-4">
             <div className="flex min-w-72 flex-col gap-3">
-              <p className="text-[#0e1a13] tracking-light text-[32px] font-bold leading-tight">Walmart Store Carbon Performance in India</p>
-              <p className="text-[#51946b] text-sm font-normal leading-normal">Visualize and manage carbon emissions across all Walmart stores in India. Click on a store to view its detailed sustainability report and improvement suggestions.</p>
+              <p className="text-[#0e1a13] tracking-light text-[32px] font-bold leading-tight">
+                Walmart Store Carbon Performance in India
+              </p>
+              <p className="text-[#51946b] text-sm font-normal leading-normal">
+                Visualize and manage carbon emissions across all Walmart stores
+                in India. Click on a store to view its detailed sustainability
+                report and improvement suggestions.
+              </p>
             </div>
           </div>
 
@@ -191,49 +245,61 @@ const ManagerDashboardPage = () => {
           <div className="flex gap-3 p-3 flex-wrap items-center">
             {/* Carbon Performance Filters */}
             <button
-              onClick={() => setCarbonPerformanceFilter('all')}
+              onClick={() => setCarbonPerformanceFilter("all")}
               className={`flex h-10 shrink-0 items-center justify-center rounded-lg px-4 text-sm font-medium leading-normal transition-colors duration-200 ${
-                carbonPerformanceFilter === 'all' ? 'bg-[#51946b] text-white' : 'bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]'
+                carbonPerformanceFilter === "all"
+                  ? "bg-[#51946b] text-white"
+                  : "bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]"
               }`}
             >
               Show All Stores
             </button>
             <button
-              onClick={() => setCarbonPerformanceFilter('best')}
+              onClick={() => setCarbonPerformanceFilter("best")}
               className={`flex h-10 shrink-0 items-center justify-center rounded-lg px-4 text-sm font-medium leading-normal transition-colors duration-200 ${
-                carbonPerformanceFilter === 'best' ? 'bg-green-600 text-white' : 'bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]'
+                carbonPerformanceFilter === "best"
+                  ? "bg-green-600 text-white"
+                  : "bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]"
               }`}
             >
               Top 5 Best (Carbon)
             </button>
             <button
-              onClick={() => setCarbonPerformanceFilter('worst')}
+              onClick={() => setCarbonPerformanceFilter("worst")}
               className={`flex h-10 shrink-0 items-center justify-center rounded-lg px-4 text-sm font-medium leading-normal transition-colors duration-200 ${
-                carbonPerformanceFilter === 'worst' ? 'bg-red-600 text-white' : 'bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]'
+                carbonPerformanceFilter === "worst"
+                  ? "bg-red-600 text-white"
+                  : "bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]"
               }`}
             >
               Top 5 Worst (Carbon)
             </button>
             <button
-              onClick={() => setCarbonPerformanceFilter('lessThan100')}
+              onClick={() => setCarbonPerformanceFilter("lessThan100")}
               className={`flex h-10 shrink-0 items-center justify-center rounded-lg px-4 text-sm font-medium leading-normal transition-colors duration-200 ${
-                carbonPerformanceFilter === 'lessThan100' ? 'bg-blue-600 text-white' : 'bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]'
+                carbonPerformanceFilter === "lessThan100"
+                  ? "bg-blue-600 text-white"
+                  : "bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]"
               }`}
             >
               Carbon &lt; 100 tonnes
             </button>
             <button
-              onClick={() => setCarbonPerformanceFilter('100to120')}
+              onClick={() => setCarbonPerformanceFilter("100to120")}
               className={`flex h-10 shrink-0 items-center justify-center rounded-lg px-4 text-sm font-medium leading-normal transition-colors duration-200 ${
-                carbonPerformanceFilter === '100to120' ? 'bg-yellow-600 text-white' : 'bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]'
+                carbonPerformanceFilter === "100to120"
+                  ? "bg-yellow-600 text-white"
+                  : "bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]"
               }`}
             >
               Carbon 100-120 tonnes
             </button>
             <button
-              onClick={() => setCarbonPerformanceFilter('greaterThan120')}
+              onClick={() => setCarbonPerformanceFilter("greaterThan120")}
               className={`flex h-10 shrink-0 items-center justify-center rounded-lg px-4 text-sm font-medium leading-normal transition-colors duration-200 ${
-                carbonPerformanceFilter === 'greaterThan120' ? 'bg-purple-600 text-white' : 'bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]'
+                carbonPerformanceFilter === "greaterThan120"
+                  ? "bg-purple-600 text-white"
+                  : "bg-[#e8f2ec] text-[#0e1a13] hover:bg-[#d1e6d9]"
               }`}
             >
               Carbon &gt; 120 tonnes
@@ -242,7 +308,9 @@ const ManagerDashboardPage = () => {
 
           {/* Major Factor Checkboxes */}
           <div className="flex gap-4 p-3 flex-wrap items-center bg-[#e8f2ec] rounded-lg mt-3">
-            <span className="text-[#0e1a13] text-sm font-medium leading-normal">Focus Areas:</span>
+            <span className="text-[#0e1a13] text-sm font-medium leading-normal">
+              Focus Areas:
+            </span>
             {Object.keys(majorFactorFilters).map((factor) => (
               <div key={factor} className="flex items-center">
                 <input
@@ -253,18 +321,24 @@ const ManagerDashboardPage = () => {
                   onChange={handleMajorFactorChange}
                   className="h-4 w-4 text-[#51946b] focus:ring-[#51946b] border-gray-300 rounded"
                 />
-                <label htmlFor={factor} className="ml-2 text-sm text-[#0e1a13] capitalize">
-                  {factor.replace(/-/g, ' ')}
+                <label
+                  htmlFor={factor}
+                  className="ml-2 text-sm text-[#0e1a13] capitalize"
+                >
+                  {factor.replace(/-/g, " ")}
                 </label>
               </div>
             ))}
           </div>
 
-
           {/* Map Area */}
           <div className="flex-1 p-4 min-h-[400px]">
             {allStores.length > 0 ? (
-              <IndiaMap stores={filteredStores} onStoreClick={handleStoreClick} filterType={carbonPerformanceFilter} />
+              <IndiaMap
+                stores={filteredStores}
+                onStoreClick={handleStoreClick}
+                filterType={carbonPerformanceFilter}
+              />
             ) : (
               <div className="flex justify-center items-center h-full text-lg text-gray-500">
                 Loading map data...
@@ -275,7 +349,11 @@ const ManagerDashboardPage = () => {
       </div>
 
       {/* Side Drawer Component */}
-      <StoreDrawer isOpen={isDrawerOpen} onClose={handleDrawerClose} store={selectedStore} />
+      <StoreDrawer
+        isOpen={isDrawerOpen}
+        onClose={handleDrawerClose}
+        store={selectedStore}
+      />
     </div>
   );
 };
