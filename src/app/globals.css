@@ -24,3 +24,86 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+/* Map Marker Styles */
+.custom-marker-div {
+  border: none !important;
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-marker-div .marker-inner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+}
+
+.green-marker .marker-inner {
+  background-color: #39e079 !important;
+}
+.red-marker .marker-inner {
+  background-color: #e72a08 !important;
+}
+.gold-marker .marker-inner {
+  background-color: #ffd700 !important;
+}
+.orange-marker .marker-inner {
+  background-color: #ffa500 !important;
+}
+
+.radiating-marker {
+  overflow: visible;
+}
+
+.radiating-marker .marker-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.radiating-marker::before,
+.radiating-marker::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #e72a08;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite;
+}
+
+.radiating-marker::after {
+  animation-delay: 1s;
+}
+
+.calming-marker .marker-inner {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
