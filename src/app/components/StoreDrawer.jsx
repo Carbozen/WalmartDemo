@@ -49,7 +49,7 @@ const StoreDrawer = ({ isOpen, onClose, store }) => {
         <h3 className="text-xl font-semibold mb-2 text-[#0e1a13]">
           Carbon Footprint
         </h3>
-        <p className="text-lg mb-1">
+        <p className="text-lg text-[#0e1a13] mb-1">
           Current:{" "}
           <span
             className={`${getCarbonPerformanceColorClass(
@@ -77,7 +77,7 @@ const StoreDrawer = ({ isOpen, onClose, store }) => {
           <h3 className="text-lg font-semibold mb-2 text-[#0e1a13]">
             Energy Consumption
           </h3>
-          <p className="text-lg">
+          <p className="text-lg text-[#0e1a13]">
             {store.performance.energyConsumption.current}{" "}
             {store.performance.energyConsumption.unit}
           </p>
